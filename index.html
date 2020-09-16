@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>Mason Amadeus - Brain Feed</title>
 
 <!-- 
@@ -38,22 +39,24 @@ Hopefully this isn't TOO unprofessional, but if that's going to be a problem for
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
+</head>
+
 <body class="w3-theme-l5">
 
 <!-- Navbar -->
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
-  <a href="javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('div,p,span,img,a,body')).map(function(el){el.style[prefix + 'transform'] = 'rotate(' + (Math.floor(Math.random() * 3) - 1) + 'deg)';});});}())" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+  <!-- ugly nav box <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a> -->
+  <a href="/index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
+  <a href="javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('div,p,span,img,a,body')).map(function(el){el.style[prefix + 'transform'] = 'rotate(' + (Math.floor(Math.random() * 3) - 1) + 'deg)';});});}())" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fa fa-envelope"></i></a>
   <div class="w3-dropdown-hover w3-hide-small">
     <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-red">3</span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-      <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+      <a href="#friendrequest" class="w3-bar-item w3-button">One new friend request</a>
       <a href="javascript:(function (){document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).src='https://spookify.me/dist/spookify.js'}());" class="w3-bar-item w3-button"><b>Paul</b> would like to be downloaded.</a>
-      <a href="javascript:(function () {var s = document.createElement('script');s.setAttribute('src', 'http://fontbomb.ilex.ca/js/main.js');document.body.appendChild(s);}());" class="w3-bar-item w3-button">"Boom Boom" accepted your friend request.</a>
+      <a href="javascript:(function () {var s = document.createElement('script');s.setAttribute('src', 'https://fontbomb.ilex.ca/js/main.js');document.body.appendChild(s);}());" class="w3-bar-item w3-button">"Boom Boom" accepted your friend request.</a>
     </div>
   </div>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
@@ -62,13 +65,14 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
  </div>
 </div>
 
-<!-- Navbar on small screens -->
+<!-- Navbar on small screens
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
   <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
 </div>
+-->
 
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
@@ -93,26 +97,36 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <!-- Accordion -->
       <div class="w3-card w3-round">
         <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> About Me</button>
-          <div id="Demo1" class="w3-hide w3-container">
-            <p>Some text..</p>
-            <p>a second line of text</p>
-            <p>a third line?</p>
+          <button onclick="myFunction('AboutMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> About Me</button>
+          <div id="AboutMe" class="w3-hide w3-container">
+            <p>I am a Destination Imagination alum, and I carry the values and skills I learned from that program as the highest inspiration for what I do<br>
+              <br>My goal is to try and fill the world with as much harmless joy as I can.<br>
+              <br>For work, I am an audio/technology engineer, sound designer, junior RF engineer, producer, copywriter, and On-Air radio talent.<br>
+            <br>For fun, I am a 2D animator, 3D modeler/rigger/animator, podcast producer, musician, electronics-tinkerer, actor, and general uber-nerd.<br>
+          <br>I firmly believe in equality, social justice, and kindness. Black lives matter. Trans rights. You are valid.</p>
           </div>
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Projects</button>
-          <div id="Demo2" class="w3-hide w3-container">
-            <p>Some other text..</p>
+          <button onclick="myFunction('MyProjects')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Projects</button>
+          <div id="MyProjects" class="w3-hide w3-container">
+            <p>If you check out the post feed on this page, you can find every project I'm involved in, including guest appearances on others' content.<br>
+            <br>Use the post sorting buttons to sort the things I am involved in by their media type.<hr>
+            Almost all of my content is part of the <a href="https://scavengersnetwork.com">Scavengers Network</a></p>
           </div>
-          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-envelope fa-fw w3-margin-right"></i> Contact Me</button>
-          <div id="Demo3" class="w3-hide w3-container">
-            <p>Some other text..</p>
+          <button onclick="myFunction('ContactMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-envelope fa-fw w3-margin-right"></i> Contact Me</button>
+          <div id="ContactMe" class="w3-hide w3-container">
+        <p>If you want to reach out casually and say hello, you can email:<br><br><a href="mailto:friends@masonamadeus.com"><b>Friends@MasonAmadeus.com</b></a><br><hr>
+            If you want me to be involved in your project, or to be a guest on your show, email:<br><br><a href="mailto:collab@masonamadeus.com"><b>Collab@MasonAmadeus.com</b></a><br><hr>
+            If you'd like to hire me for your project, or interview me for some wild reason, email:<br><br><a href="mailto:business@masonamadeus.com"><b>Business@MasonAmadeus.com</b></a><br>
+        <i>(Please note, I do not take on many paid projects.)</i><hr>
+            Please include any pertinent information, like your pronouns, in your email.</p>
           </div>
-          <button onclick="myFunction('Demo5')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-address-card fa fa-fw w3-margin-right"></i> Professional</button>
-          <div id="Demo5" class="w3-hide w3-container">
-            <p>Some other text..</p>
+          <button onclick="myFunction('ProfessionalD')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-address-card fa fa-fw w3-margin-right"></i> Professional</button>
+          <div id="ProfessionalD" class="w3-hide w3-container">
+            <p>This area under construction. Eventually I'll have my resume and press kit here.<br>
+            <br>For now, you can reach out to me in a professional capactiy at:<br>
+            <br><a href="mailto:business@masonamadeus.com"><b>Business@MasonAmadeus.com</b></a></p>
           </div>
-          <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Portfolio</button>
-          <div id="Demo4" class="w3-hide w3-container">
+          <button onclick="myFunction('MyPortfolio')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> Six Broken Jpegs</button>
+          <div id="MyPortfolio" class="w3-hide w3-container">
          <div class="w3-row-padding">
          <br>
            <div class="w3-half">
@@ -154,7 +168,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
             <span class="w3-tag w3-small w3-theme-l2">3D Modeling</span>
             <span class="w3-tag w3-small w3-theme-l3">Electronics</span>
             <span class="w3-tag w3-small w3-theme-l4">Streaming</span>
-            <span class="w3-tag w3-small w3-theme-l5">High-Effort Jokes</span>
+            <span onclick="document.body.contentEditable='true'; document.designMode='on'; void 0" class="w3-tag w3-small w3-theme-l5">High-Effort Jokes</span>
           </p>
         </div>
       </div>
@@ -200,11 +214,14 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 
          <div id="guestpost"></div>
 
-<!-- THIS IS WHERE YOU WILL BE PUTTING MOST OF THE NEW SHIT SO THIS IS A VERY LONG COMMENT SO THAT YOU CAN NEVER MISS IT WHEN YOU'RE SCROLLING BY AND HOPEFULLY THIS PROVES TO BE A WORTHWHILE WAY TO DO THIS THERES PROBABLY A SMARTER WAY BUT I DONT KNOW WHAT IT IS BECAUSE I AM A BIG DUMB DUMMY NEWB -->
+<!-- THIS IS WHERE YOU WILL BE PUTTING MOST OF THE NEW SHIT SO THIS IS
+   A VERY LONG COMMENT SO THAT YOU CAN NEVER MISS IT WHEN YOU'RE SCROLLING BY 
+   AND HOPEFULLY THIS PROVES TO BE A WORTHWHILE WAY TO DO THIS THERES PROBABLY 
+   A SMARTER WAY BUT I DONT KNOW WHAT IT IS BECAUSE I AM A BIG DUMB DUMMY NEWB -->
 
 
-<!-- POST START -->
-<div class="audiopost w3-container w3-card w3-white w3-round w3-margin"><br>
+<!-- WIDK POST START -->
+<div id="WIDK" class="audiopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
         
         <img src="/images/widkavatar.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">2 mins</span>
@@ -220,65 +237,106 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <iframe src="https://pinecast.com/player/a82074b0-466d-4a88-a5c7-26a939c38f0b?theme=flat" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe> 
       
 <hr>
-<button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-trash"></i> Comment</button> 
+<button type="button" onclick="window.open('https://scavengersnetwork.com/widk','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
+<button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
-<!-- POST START --> 
-<div id='audioengineeringpost' class="videopost w3-container w3-card w3-white w3-round w3-margin"><br>
+<!-- ALLYHAB POST START -->
+<div id="allyhab" class="audiopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
+        
+  <img src="/images/allyhabavatar.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+  <span class="w3-right w3-opacity">11 mins</span>
+  <h4>Alabaster's Haberdashery</h4><br>
+ 
+<hr class="w3-clear">
+  
+  <p>In late 2019, my friend Jordan Reed and I began recieving pale blue flash drives in the mail.<br>
+  <br>On each flash drive was an mp3 file, and a single text document that simply read "PodCube, The Future is Yesterday".<br>
+  <br>Apparently this is a podcast from the past? In a hat shop?<br>
+  <br>I dunno. All I know is that I got a dead bird in the mail when we stopped uploading the mp3s so... here we are.<br>
+  </p>
+  <iframe src="https://pinecast.com/player/e381adab-c1f6-4c6b-ae60-f60460726a4b?theme=flat" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe>
+<hr>
+<button type="button" onclick="window.open('https://www.scavengersnetwork.com/alabaster','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
+<button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+</div>
+<!-- POST END -->
+
+<!-- FIXTURES POST START --> 
+<div id='fishfixtures' class="videopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
          
-        <img src="/images/scavnetavatar.png" alt="Scavengers Network" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">15 mins</span>
-        <h4>ScavNet Patreon</h4><br>
+        <img src="/images/fishstickavatar.jpg" alt="Scavengers Network" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">47 mins</span>
+        <h4>Fishstick from WIDK</h4><br>
 
 <hr class="w3-clear">
 
-        <p>Mason made this excellent video of professional audio tips for aspiring engineers. <br>
-        <br>It is jam-packed with good info, and it's supposed to be patrons only, but it's here because this is inside of Mason's brain. <br>
-        <br>Please don't be mad, Colin.</p>
-        <div class='youtube-player' data-id="uxUVF330pgQ"></div>
+        <p>I was going to do a youtube series of building useless gadgets. <br>
+        <br>I only ended up making one video and never fully publishing it, but hopefully soon I'll revisit the concept because I had a lot of fun.<br>
+        <br>Anyways, it's here if you want to see it!</p>
+        <div class='youtube-player' data-id="ueLq6c_hEKI"></div>
 
 <hr>
-<button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
 <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
 
-<!-- POST START --> 
-<div id='text demo'class="textpost w3-container w3-card w3-white w3-round w3-margin"><br>
+<!-- TEXT DEMO POST START --> 
+<div id='text demo'class="textpost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
      
         <img src="/images/masonavatar.png" alt="Mason" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">32 mins</span>
+        <span class="w3-right w3-opacity">62 mins</span>
         <h4>Mason's Inner Voice</h4><br>
            
 <hr class="w3-clear">
            
-        <p>This is an example of a text post I could make I suppose. <br>
-        <br>I don't know what I would really use this space for. <br>
-        <br>I'm not nearly profound enough to have musings worth reading.</p>
-
+        <p>Hey so, if you're scrolling the full list, below this point are mostly guest appearances. <br>
+        <br>Sometimes I might hide cool stuff down here. <br>
+        <br>Who knows, I'm not really planning this out that thoroughly.</p>
 <hr>
-<button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="this.innerHTML='Liked'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
 <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
+<!-- APOTELESMA DEMO POST START --> 
+<div id='text demo'class="textpost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
+     
+  <img src="/images/masonavatar.png" alt="Mason" class="w3-left w3-circle w3-margin-right" style="width:60px">
+  <span class="w3-right w3-opacity">1 day ago</span>
+  <h4>Apotelesma Guest Spot</h4><br>
+     
+<hr class="w3-clear">
+     
+  <p>The Scavengers Network did a host-swap event. I got to host the Apotelesma podcast, with my friends Ty (from the Side Character Quest
+    podcast) and Morgan (from "The Broads and the Bees" podcast).<br>
+  <br>We created a Scottish crime-noir comedy show, in place of the podcast's normal programming.<br>
+  <br>I had a lot of fun doing the production and sound design for this one.<br>
+  <br>Also, Morgan and Ty are brilliant and you should ABSOLUTELY check out the content they make.</p>
+  <iframe class="audio-player" width="100%" src="https://plinkhq.com/i/1457127926/e/1000466981429?to=player" frameborder="0" scrolling="no"></iframe>
+<br><i>Embed stolen from <a href="plinkhq.com">Plink.</a></i>
+<hr>
+<button type="button" onclick="this.innerHTML='Liked'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
+<button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+</div>
+<!-- POST END -->
 
-<!-- POST START --> 
-<div id='bellowsheartdemo'class="animpost w3-container w3-card w3-white w3-round w3-margin"><br>
+<!-- BELLOWS HEART POST START --> 
+<div id='bellowsheartdemo'class="animpost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
       
         <img src="/images/bhavatar.jpg" alt="Bellows Heart" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">2 days</span>
+        <span class="w3-right w3-opacity">2 days ago</span>
         <h4>Bellows Heart</h4><br>
       
 <hr class="w3-clear">
           
-        <p>this is where animation would go</p>
+        <p>Keep an eye out for our fully-animated 3D miniseries set in the goofy-gritty steampunk city of Bellows Heart!<br><br> Coming 2021 </p>
 
 <hr>
-<button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="this.innerHTML='Liked'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
 <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
@@ -309,7 +367,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
           <span>Several Dozen Ants</span>
           <div class="w3-row w3-opacity">
             <div class="w3-half">
-              <button class="w3-button w3-block w3-green w3-section" title="Accept" onclick="document.getElementById('friendrequest').style.display='none'; document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).setAttribute('src','https://www.cs.huji.ac.il/~irush/scripts/antsbml.js');"><i class="fa fa-check"></i></button>
+              <button class="w3-button w3-block w3-green w3-section" title="Accept" onclick="document.getElementById('friendrequest').style.display='none'; document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).setAttribute('src','https://www.cs.huji.ac.il/~irush/scripts/antsbml.js')"><i class="fa fa-check"></i></button>
+
             </div>
             <div class="w3-half">
               <button class="w3-button w3-block w3-red w3-section" title="Decline" onclick="document.getElementById('friendrequest').style.display='none'"><i class="fa fa-remove"></i></button>
@@ -320,13 +379,15 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <br>
       
       <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-        <i class="fa fa-coffee w3-center w3-xxlarge"></i>
-        <p class="w3-center">Buy me a coffee!</p>
-        <p class="w3-center">Ko-Fi Button Goes Here</p>
+        <i class="fa fa-dollar w3-center w3-xxlarge"></i><i class="fa fa-coffee w3-center w3-xxlarge"></i>
+        <p class="w3-center"><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Throw Coffee At Me.', '#6f37b3', 'T6T227DZ0');kofiwidget2.draw();</script></p>
+        <p class="w3-center">Support me with Money!</p>
       </div>
       <br>
       
       <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
+        <!-- if you email me about this to say you found a 'bug' in my website then I am going to be so unimpressed. 
+          However if you email me because you read this comment, I will be more impressed.-->
         <p><i class="fa fa-bug w3-xxlarge"></i></p>
       </div>
       
@@ -486,7 +547,7 @@ for (i = 0; i < x.length; i++) {
       margin-left: -36px;
       margin-top: -36px;
       position: absolute;
-      background: url("//i.imgur.com/TxzC70f.png") no-repeat;
+      background: url("/images/playhover.png") no-repeat;
       cursor: pointer;
   }
 
@@ -494,7 +555,7 @@ for (i = 0; i < x.length; i++) {
 <script>
   /* Light YouTube Embeds by @labnol */
 
-  /* Web: http://labnol.org/?p=27941 */
+  /* Web: https://labnol.org/?p=27941 */
 
   document.addEventListener("DOMContentLoaded",
       function() {
@@ -551,8 +612,9 @@ for (i = 0; i < x.length; i++) {
     postparent.insertBefore(newDiv, currentDiv.nextSibling); 
     
     newDiv.insertAdjacentHTML('afterbegin', '<img src="/images/intruderavatar.png" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-margin-top" style="width:60px"><span class="w3-right w3-opacity w3-margin-top">Just Now</span><h4 class="w3-margin-top w3-padding-large">Random Intruder</h4><br><hr class="w3-clear w3-margin-top">');
-    newDiv.insertAdjacentHTML('beforeend', '<hr><button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button><button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"> <i class="fa fa-share"></i> Share</button>');
+    newDiv.insertAdjacentHTML('beforeend', '<hr><button type="button" onclick="this.innerHTML=\'You Just Liked Your Own Post\'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button><button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"> <i class="fa fa-share"></i> Share</button>');
   }
 </script>
+
 </body>
 </html> 
