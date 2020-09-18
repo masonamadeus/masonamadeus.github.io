@@ -49,8 +49,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <!-- ugly nav box <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a> -->
   <a href="/index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
   <a href="javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('div,p,span,img,a,body')).map(function(el){el.style[prefix + 'transform'] = 'rotate(' + (Math.floor(Math.random() * 3) - 1) + 'deg)';});});}())" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fa fa-envelope"></i></a>
+  <a onclick="javascript:var travoltaWTF = document.getElementById('travoltaWTF'); if(travoltaWTF){ document.getElementById('travoltaWTF').remove(); } else { var travolta = document.createElement('img'); travolta.setAttribute('id', 'travoltaWTF'); travolta.src='/images/travoltawtf.gif';travolta.alt='WTF!'; travolta.style.position='fixed'; travolta.style.left='0';travolta.style.bottom='0%';travolta.style.zIndex='10000'; document.body.appendChild(travolta);}" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Travolta"><i class="fa fa-user"></i></a>
+  <a href="#ContactMe" onclick="myFunction('ContactMe')" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fa fa-envelope"></i></a>
   <div class="w3-dropdown-hover w3-hide-small">
     <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-red">3</span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
@@ -59,12 +59,12 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <a href="javascript:(function () {var s = document.createElement('script');s.setAttribute('src', 'https://fontbomb.ilex.ca/js/main.js');document.body.appendChild(s);}());" class="w3-bar-item w3-button">"Boom Boom" accepted your friend request.</a>
     </div>
   </div>
-  <a href="javascript:var i,s,ss=['/kh.js','https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'];for(i=0;i!=ss.length;i++){s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);" class="w3-bar-item w3-button w3-right w3-padding-large w3-hover-white" title="My Account">
+  <a href="javascript:var i,s,ss=['/kh.js','https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'];for(i=0;i!=ss.length;i++){s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
     <img src="/images/masoninitials.png" class="w3-circle" style="height:30px;width:30px" alt="Avatar">
   </a>
  </div>
 </div>
-
+<div class="w3-bar w3-theme-d3 w3-center w3-padding-large" style="margin-top:50px"><a href="/professional.html"><b>Media Inquiries</b></a></div>  
 <!-- Navbar on small screens
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
@@ -75,7 +75,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 -->
 
 <!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:25px">
+
   <!-- The Grid -->
   <div class="w3-row">
     <!-- Left Column -->
@@ -83,7 +84,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <!-- Profile -->
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
-         <h4 class="w3-center">Mason Amadeus</h4>
+         <h4 class="w3-center"><b>Mason Amadeus</b></h4>
          <p class="w3-center"><img src="/images/masonavatar.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <p class="w3-center">I make dumb, fun, and sometimes cool things.</p>
          <hr>
@@ -122,7 +123,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
           <button onclick="myFunction('ProfessionalD')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-address-card fa fa-fw w3-margin-right"></i> Professional</button>
           <div id="ProfessionalD" class="w3-hide w3-container">
             <p>This area under construction. Eventually I'll have my resume and press kit here.<br>
-            <br>For now, you can reach out to me in a professional capactiy at:<br>
+            <br>For now, you can reach out to me in a professional capacity at:<br>
             <br><a href="mailto:business@masonamadeus.com"><b>Business@MasonAmadeus.com</b></a></p>
           </div>
           <button onclick="myFunction('MyPortfolio')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Cool Logo</button>
@@ -528,7 +529,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
         <!-- if you email me about this to say you found a 'bug' in my website then I am going to be so unimpressed. 
           However if you email me because you read this comment, I will be more impressed.-->
-        <p><i class="fa fa-bug w3-xxlarge"></i></p>
+        <p><i onclick="myFunction('bugfeat')" class="fa fa-bug w3-xxlarge"></i>
+        <span id="bugfeat" class="w3-hide">This is not an easter egg, it's a bug.</span></p>
       </div>
       
     <!-- End Right Column -->
