@@ -28,6 +28,25 @@ Hopefully this isn't TOO unprofessional, but if that's going to be a problem for
 
 -->
 
+<!-- to keep the media bar from being too annoying-->
+<script>
+window.onload = function() {
+    var hide = localStorage.getItem('hideBar');
+    if(hide === 'true'){
+         document.getElementById('inquiries').style.display = "none";
+         document.getElementById('pagecontain').setAttribute('style','max-width:1400px;margin-top:80px');
+    } else {
+      document.getElementById('inquiries').style.display = "block";
+         document.getElementById('pagecontain').setAttribute('style','max-width:1400px;margin-top:120px');
+    }
+}
+
+function hideMedia() {
+   document.getElementById('inquiries').style.display = "none";
+   document.getElementById('pagecontain').setAttribute('style','max-width:1400px;margin-top:80px');
+   localStorage.setItem('hideBar', 'true');
+}
+</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,6 +65,13 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <!-- Navbar -->
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+
+  <!-- Media Inquiries Notifier Bar-->
+  <div id="inquiries" class="w3-bar w3-amber w3-hide-small w3-animate-top" style="display: none">
+      <a href="/professional.html" class="w3-bar-item" style="margin-left: 40%;"><b>Media Inquiries</b></a>
+      <button class="w3-bar-item w3-button w3-right" onclick="hideMedia()"><i class="fa fa-times-circle"></i>
+  </div>
+
   <!-- ugly nav box <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a> -->
   <a href="/index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
   <a href="javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('div,p,span,img,a,body')).map(function(el){el.style[prefix + 'transform'] = 'rotate(' + (Math.floor(Math.random() * 3) - 1) + 'deg)';});});}())" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
@@ -63,8 +89,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
     <img src="/images/masoninitials.png" class="w3-circle" style="height:30px;width:30px" alt="Avatar">
   </a>
  </div>
-</div>
-<div class="w3-bar w3-theme-d3 w3-center w3-padding-large" style="margin-top:50px"><a href="/professional.html"><b>Media Inquiries</b></a></div>  
+</div>  
 <!-- Navbar on small screens
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
@@ -75,7 +100,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 -->
 
 <!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:25px">
+<div id="pagecontain" class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
 
   <!-- The Grid -->
   <div class="w3-row">
@@ -122,9 +147,9 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
           </div>
           <button onclick="myFunction('ProfessionalD')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-address-card fa fa-fw w3-margin-right"></i> Professional</button>
           <div id="ProfessionalD" class="w3-hide w3-container">
-            <p>This area under construction. Eventually I'll have my resume and press kit here.<br>
-            <br>For now, you can reach out to me in a professional capacity at:<br>
-            <br><a href="mailto:business@masonamadeus.com"><b>Business@MasonAmadeus.com</b></a></p>
+            <p>This area under construction.<br>
+            <br>I'll be fleshing this out soon with more details. But for now:<br>
+            <br><a onclick="localStorage.clear('hideBar')" href="/professional.html"><b>Here is a more focused page for media inquiries.</b></a></p>
           </div>
           <button onclick="myFunction('MyPortfolio')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Cool Logo</button>
           <div id="MyPortfolio" class="w3-hide w3-container">
@@ -739,4 +764,4 @@ for (i = 0; i < x.length; i++) {
 </script>
 
 </body>
-</html> 
+</html>
