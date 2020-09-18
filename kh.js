@@ -789,7 +789,9 @@ Growth Speed: <input id="vol_mult" type="text" size="6" value="1.0" />\
 </label><br />\
 <label title="Bigger objects require a bigger katamari to pick up.">\
 Realistic Pickups? <input id="checkv" type="checkbox" checked="checked" />\
-</label></div>\
+</label><br />\
+</div>\
+<br /><div style="text-align:center">Mason did not make this, it is borrowed from <a href="http://kathack.com">kathack.com</a></div>\
 <p id="loadingp">Loading!</p>';
     gameDiv.appendChild(d);
     d.getElementsByTagName('button')[0].addEventListener('click', function () {

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mason Amadeus - Brain Feed</title>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+</head>
+
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <!-- ugly nav box <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a> -->
+  <a href="/index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
+  <a href="/index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
+  <a href="#ContactMe" onclick="myFunction('ContactMe')" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fa fa-envelope"></i></a>
+  <a href="/index.html" class="w3-bar-item w3-button w3-right w3-padding-large w3-hover-white w3-hide-small" title="My Account">
+    <img src="/images/masoninitials.png" class="w3-circle" style="height:30px;width:30px" alt="Avatar">
+  </a>
+ </div>
+</div>
+
+<!-- Navbar on small screens
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+-->
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">Mason Amadeus</h4>
+         <p class="w3-center"><img src="/images/masonavatar.png" class="w3-circle" style="height:250px;width:250px" alt="Avatar"></p>
+         <p class="w3-center">I make dumb, fun, and sometimes cool things.</p>
+         <hr>
+         <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-text-theme"></i> Content Creator</p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Vermont, USA</p>
+         <p><i class="fa fa-mars fa-fw w3-margin-right w3-text-theme"></i> He/Him</p>
+         <hr>
+              <!-- Interests --> 
+              <div class="w3-container">
+                <p>Skills</p>
+                <p>
+                  <span class="w3-tag w3-small w3-theme-d5">Audio Engineering</span>
+                  <span class="w3-tag w3-small w3-theme-d4">Sound Design</span>
+                  <span class="w3-tag w3-small w3-theme-d3">Acting</span>
+                  <span class="w3-tag w3-small w3-theme-d2">Writing</span>
+                  <span class="w3-tag w3-small w3-theme-d1">Videography</span>
+                  <span class="w3-tag w3-small w3-theme">Blender 3D</span>
+                  <span class="w3-tag w3-small w3-theme-l1">3D & 2D Animation</span>
+                  <span class="w3-tag w3-small w3-theme-l2">3D Modeling</span>
+                  <span class="w3-tag w3-small w3-theme-l3">Electronics</span>
+                  <span class="w3-tag w3-small w3-theme-l4">Streaming</span>
+                  <span onclick="document.body.contentEditable='true'; document.designMode='on'; void 0" class="w3-tag w3-small w3-theme-l5">High-Effort Jokes</span>
+                </p>
+              </div>
+        </div>
+      </div>
+      </div>
+
+
+
+      <div class="w3-col m9 w3-padding-large">
+     <!-- Accordion -->
+     <div class="w3-card w3-round">
+      <div class="w3-white">
+
+
+        <button onclick="myFunction('AboutMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> About Me</button>
+        <div id="AboutMe" class="w3-show w3-hide w3-container">
+          <p>I am a Destination Imagination alum, and I carry the values and skills I learned from that program as the highest inspiration for what I do<br>
+            <br>My goal is to try and fill the world with as much harmless joy as I can.<br>
+            <br>For work, I am an audio/technology engineer, sound designer, junior RF engineer, producer, copywriter, and On-Air radio talent.<br>
+          <br>For fun, I am a 2D animator, 3D modeler/rigger/animator, podcast producer, musician, electronics-tinkerer, actor, and general uber-nerd.<br>
+        <br>I firmly believe in equality, social justice, and kindness. Black lives matter. Trans rights. You are valid.</p>
+        </div>
+
+
+        <button onclick="myFunction('MyProjects')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Projects</button>
+        <div id="MyProjects" class="w3-show w3-hide w3-container">
+          <p>If you check out the post feed on the home page, you can find every project I'm involved in, including guest appearances on others' content.<br>
+          <br>Use the post sorting buttons to sort by media type.<hr>
+          Almost all of my content is part of the <a href="https://scavengersnetwork.com">Scavengers Network</a></p>
+        </div>
+
+
+        <button onclick="myFunction('ContactMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-envelope fa-fw w3-margin-right"></i> Contact Me</button>
+        <div id="ContactMe" class="w3-hide w3-container">
+      <p>If you want to reach out casually and say hello, you can email:<br><br><a href="mailto:friends@masonamadeus.com"><b>Friends@MasonAmadeus.com</b></a><br><hr>
+          If you want me to be involved in your project, or to be a guest on your show, email:<br><br><a href="mailto:collab@masonamadeus.com"><b>Collab@MasonAmadeus.com</b></a><br><hr>
+          If you'd like to hire me for your project, or interview me for some wild reason, email:<br><br><a href="mailto:business@masonamadeus.com"><b>Business@MasonAmadeus.com</b></a><br>
+      <i>(Please note, I do not take on many paid projects.)</i><hr>
+          Please include any pertinent information, like your pronouns, in your email.</p>
+        </div>
+
+
+        <button onclick="myFunction('ProfessionalD')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-address-card fa fa-fw w3-margin-right"></i> Press Kit & Credentials</button>
+        <div id="ProfessionalD" class="w3-hide w3-container">
+          <p>This area under construction. Eventually I'll have my resume and press kit here.<br>
+          <br>For now, you can reach out to me in a professional capacity at:<br>
+          <br><a href="mailto:business@masonamadeus.com"><b>Business@MasonAmadeus.com</b></a></p>
+        </div>
+
+
+        <button onclick="myFunction('MyPortfolio')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Cool Logo</button>
+        <div id="MyPortfolio" class="w3-hide w3-container">
+       <div class="w3-row-padding">
+       <br>
+         <div class="">
+                <img src="/images/masonlogo.jpg" style="width:100%" class="w3-margin-bottom">
+                <p>Logo designed/created by <a href="https://instagram.com/kelp.rabbit">Kelp Rabbit</a></p>
+            </div>
+           </div>
+         </div>
+     
+     
+       </div>     
+    </div>
+
+    </div>
+  </div>
+
+</div>
+
+    <script>
+      // Accordion
+      function myFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-theme-d1";
+        } else { 
+          x.className = x.className.replace("w3-show", "");
+          x.previousElementSibling.className = 
+          x.previousElementSibling.className.replace(" w3-theme-d1", "");
+        }
+      }
+      </script>
+      </body>
+      </html>
