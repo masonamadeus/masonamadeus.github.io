@@ -78,7 +78,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <a onclick="javascript:var travoltaWTF = document.getElementById('travoltaWTF'); if(travoltaWTF){ document.getElementById('travoltaWTF').remove(); } else { var travolta = document.createElement('img'); travolta.setAttribute('id', 'travoltaWTF'); travolta.src='/images/travoltawtf.gif';travolta.alt='WTF!'; travolta.style.position='fixed'; travolta.style.left='0';travolta.style.bottom='0%';travolta.style.zIndex='10000'; document.body.appendChild(travolta);}" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Travolta"><i class="fa fa-user"></i></a>
   <a href="#ContactMe" onclick="myFunction('ContactMe')" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fa fa-envelope"></i></a>
   <div class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-red">3</span></button>     
+    <button onclick="document.getElementById('notifCount').style.display = 'none'" class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span id="notifCount" class="w3-badge w3-right w3-small w3-red">3</span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="#friendrequest" class="w3-bar-item w3-button">One new friend request</a>
       <a href="javascript:(function (){document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).src='https://spookify.me/dist/spookify.js'}());" class="w3-bar-item w3-button"><b>Paul</b> would like to be downloaded.</a>
@@ -90,6 +90,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   </a>
  </div>
 </div>  
+
+
 <!-- Navbar on small screens
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
