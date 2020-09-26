@@ -46,6 +46,7 @@ function hideMedia() {
    document.getElementById('pagecontain').setAttribute('style','max-width:1400px;margin-top:80px');
    localStorage.setItem('hideBar', 'true');
 }
+
 </script>
 
 <meta charset="UTF-8">
@@ -58,6 +59,7 @@ function hideMedia() {
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
+
 </head>
 
 <body class="w3-theme-l5">
@@ -76,9 +78,9 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <a href="/index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
   <a href="javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('div,p,span,img,a,body')).map(function(el){el.style[prefix + 'transform'] = 'rotate(' + (Math.floor(Math.random() * 3) - 1) + 'deg)';});});}())" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
   <a onclick="javascript:var travoltaWTF = document.getElementById('travoltaWTF'); if(travoltaWTF){ document.getElementById('travoltaWTF').remove(); } else { var travolta = document.createElement('img'); travolta.setAttribute('id', 'travoltaWTF'); travolta.src='/images/travoltawtf.gif';travolta.alt='WTF!'; travolta.style.position='fixed'; travolta.style.left='0';travolta.style.bottom='0%';travolta.style.zIndex='10000'; document.body.appendChild(travolta);}" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Travolta"><i class="fa fa-user"></i></a>
-  <a href="#ContactMe" onclick="myFunction('ContactMe')" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fa fa-envelope"></i></a>
+  <a href="#contact" onclick="myFunction('ContactMe')" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fa fa-envelope"></i></a>
   <div class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span onclick="this.innerHTML = ';)'" id="notifCount" class="w3-badge w3-right w3-small w3-red">3</span></button>     
+    <button onclick="document.getElementById('notifCount').style.display='none'" class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span id="notifCount" class="w3-badge w3-right w3-small w3-red">3</span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="#friendrequest" class="w3-bar-item w3-button">One new friend request</a>
       <a href="javascript:(function (){document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).src='https://spookify.me/dist/spookify.js'}());" class="w3-bar-item w3-button"><b>Paul</b> would like to be downloaded.</a>
@@ -90,8 +92,6 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   </a>
  </div>
 </div>  
-
-
 <!-- Navbar on small screens
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
@@ -139,7 +139,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
             <br>Use the post sorting buttons to sort the things I am involved in by their media type.<hr>
             Almost all of my content is part of the <a href="https://scavengersnetwork.com">Scavengers Network</a></p>
           </div>
-          <button onclick="myFunction('ContactMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-envelope fa-fw w3-margin-right"></i> Contact Me</button>
+          <button id="contact" onclick="myFunction('ContactMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-envelope fa-fw w3-margin-right"></i> Contact Me</button>
           <div id="ContactMe" class="w3-hide w3-container">
         <p>If you want to reach out casually and say hello, you can email:<br><br><a href="mailto:friends@masonamadeus.com"><b>Friends@MasonAmadeus.com</b></a><br><hr>
             If you want me to be involved in your project, or to be a guest on your show, email:<br><br><a href="mailto:collab@masonamadeus.com"><b>Collab@MasonAmadeus.com</b></a><br><hr>
@@ -254,6 +254,26 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <hr>
 <button type="button" onclick="window.open('https://scavengersnetwork.com/widk','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
 <button type="button" onclick="shareButton('https://plinkhq.com/i/1390415840')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+</div>
+<!-- POST END -->
+
+<!-- TRASH OFF POST START --> 
+<div class="videopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
+         
+  <img src="/images/masonlogo.jpg" alt="Fishstick" class="w3-left w3-circle w3-margin-right" style="width:60px">
+  <span class="w3-right w3-opacity">5 mins</span>
+  <h4>TRASH OFF - Shoe Lanch</h4><br>
+
+<hr class="w3-clear">
+
+  <p>Tucker and I have created a new TV show in which we compete to solve challenges<br>
+  <br>by building gadgets using only the garbage that has piled up in Tucker's barn.<br>
+  <br>If you like it and you have an idea of a challenge we could do for the next one, email me!</p>
+  <div class='youtube-player' data-id="_OPn5pW4ROA"></div>
+
+<hr>
+<button type="button" onclick="window.open('https://www.youtube.com/channel/UC6DjxczWaD3hM_7MJSVlqvQ','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/_OPn5pW4ROA')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
