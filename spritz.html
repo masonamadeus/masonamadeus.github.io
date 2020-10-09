@@ -54,7 +54,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 function faceSpray(access) { 
 var xhr = new XMLHttpRequest();
 var value = "gotcha";
-var address = "https://" + access + ".ngrok.io"
+var address = "https://cors-anywhere.herokuapp.com/https://" + access + ".ngrok.io"
 xhr.open("POST", address, true);
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.send(JSON.stringify({
