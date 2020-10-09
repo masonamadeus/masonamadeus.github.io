@@ -30,12 +30,14 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
     <!-- Left Column -->
     <div class="w3-col w3-center">
       <!-- Profile -->
-      <div class="w3-card w3-round w3-white w3-button w3-xxlarge w3-padding-large" onclick="faceSpray()">
+      <div class="w3-card w3-round w3-white w3-button w3-xxlarge w3-padding-large" onclick="faceSpray(document.getElementById('URL').value)">
       <strong>SEND WETS</strong><br>
         <i class="w3-xxlarge fa fa-tint"></i><BR>
         <strong>CLICK TO SPRAY</strong>
+      </div> <br><br><br>
+      <div class="w3-padding-large">
+      <input id="URL" type="text" value="Access Code?">
       </div>
-      
     
     <!-- End Left Column -->
     </div>
@@ -49,10 +51,11 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 
 <script>
 
-function faceSpray() { 
+function faceSpray(access) { 
 var xhr = new XMLHttpRequest();
 var value = "gotcha";
-xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://webhook.site/d7c1ad67-325a-4153-92ca-328a587abf37", true);
+var address = "https://" + access + ".ngrok.io"
+xhr.open("POST", address, true);
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.send(JSON.stringify({
     value: value
