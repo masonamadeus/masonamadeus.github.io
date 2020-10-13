@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/all.min.css">
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
@@ -27,9 +27,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:100px">   
 
-    <!-- Left Column -->
-    <div class="w3-col w3-center">
-      <!-- Profile -->
+    <!-- SPRAY BUTTON -->
+    <div id ="spraybutton" class="w3-col w3-center">
       <div class="w3-card w3-round w3-white w3-button w3-xxlarge w3-padding-large" onclick="faceSpray(document.getElementById('URL').value)">
       <strong>SEND WETS</strong><br>
         <i class="w3-xxlarge fa fa-tint"></i><BR>
@@ -39,9 +38,16 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <input id="URL" type="text" placeholder="Access Code?">
       </div>
     
-    <!-- End Left Column -->
+    <!-- End SPRAY BUTTON -->
     </div>
-    
+
+    <div id ="runout" class="w3-col w3-center" style="display: none;">
+      <div class="w3-card w3-round w3-white w3-button w3-xxlarge w3-padding-large">
+      <strong>OH NO!</strong><br>
+      <i class="fas fa-tint-slash"></i><BR>
+        <strong>OUT OF WATER</strong>
+      </div> <br><br><br>
+    </div>
     
   <!-- End Grid -->
 </div>
@@ -51,8 +57,29 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 
 <script>
 
-function faceSpray(access) { 
-  var _0x95fa=["\x67\x6F\x74\x63\x68\x61","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x6F\x72\x73\x2D\x61\x6E\x79\x77\x68\x65\x72\x65\x2E\x68\x65\x72\x6F\x6B\x75\x61\x70\x70\x2E\x63\x6F\x6D\x2F\x68\x74\x74\x70\x73\x3A\x2F\x2F","\x2E\x6E\x67\x72\x6F\x6B\x2E\x69\x6F","\x50\x4F\x53\x54","\x6F\x70\x65\x6E","\x43\x6F\x6E\x74\x65\x6E\x74\x2D\x54\x79\x70\x65","\x61\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E\x2F\x6A\x73\x6F\x6E","\x73\x65\x74\x52\x65\x71\x75\x65\x73\x74\x48\x65\x61\x64\x65\x72","\x73\x74\x72\x69\x6E\x67\x69\x66\x79","\x73\x65\x6E\x64"];var xhr= new XMLHttpRequest();var value=_0x95fa[0];var address=_0x95fa[1]+ access+ _0x95fa[2];xhr[_0x95fa[4]](_0x95fa[3],address,true);xhr[_0x95fa[7]](_0x95fa[5],_0x95fa[6]);xhr[_0x95fa[9]](JSON[_0x95fa[8]]({value:value}))
+function faceSpray(access) {
+  if(localStorage.getItem("spritzCount")===null) {
+  localStorage.setItem("spritzCount", 0)
+  console.log("created cookie")
+
+} else if (localStorage.getItem("spritzCount")!==null) {
+      var currentSprays = parseInt(localStorage.getItem('spritzCount'))
+      var sprayMax = 19
+
+  if (currentSprays <= sprayMax) {
+    // var _0x95fa=["\x67\x6F\x74\x63\x68\x61","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x6F\x72\x73\x2D\x61\x6E\x79\x77\x68\x65\x72\x65\x2E\x68\x65\x72\x6F\x6B\x75\x61\x70\x70\x2E\x63\x6F\x6D\x2F\x68\x74\x74\x70\x73\x3A\x2F\x2F","\x2E\x6E\x67\x72\x6F\x6B\x2E\x69\x6F","\x50\x4F\x53\x54","\x6F\x70\x65\x6E","\x43\x6F\x6E\x74\x65\x6E\x74\x2D\x54\x79\x70\x65","\x61\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E\x2F\x6A\x73\x6F\x6E","\x73\x65\x74\x52\x65\x71\x75\x65\x73\x74\x48\x65\x61\x64\x65\x72","\x73\x74\x72\x69\x6E\x67\x69\x66\x79","\x73\x65\x6E\x64"];var xhr= new XMLHttpRequest();var value=_0x95fa[0];var address=_0x95fa[1]+ access+ _0x95fa[2];xhr[_0x95fa[4]](_0x95fa[3],address,true);xhr[_0x95fa[7]](_0x95fa[5],_0x95fa[6]);xhr[_0x95fa[9]](JSON[_0x95fa[8]]({value:value}))
+    var spraid = (parseInt(localStorage.getItem('spritzCount'))+1);
+    localStorage.setItem("spritzCount", spraid.toString());
+    console.log(localStorage.getItem("spritzCount"));
+  }
+
+  if (currentSprays >= sprayMax) {
+    document.getElementById('spraybutton').style.display = "none";
+    document.getElementById('runout').style.display = "block";
+    console.log("done snet nothing")
+
+  }
+}
 }
   </script>
 </body>

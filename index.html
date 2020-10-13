@@ -55,7 +55,7 @@ function hideMedia() {
 <link rel="stylesheet" href="/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/all.min.css">
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
@@ -71,16 +71,16 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <!-- Media Inquiries Notifier Bar-->
   <div id="inquiries" class="w3-bar w3-amber w3-hide-small w3-animate-top" style="display: none">
       <a href="/professional.html" class="w3-bar-item" style="margin-left: 40%;"><b>Media Inquiries</b></a>
-      <button class="w3-bar-item w3-button w3-right" onclick="hideMedia()"><i class="fa fa-times-circle w3-xlarge"></i>
+      <button class="w3-bar-item w3-button w3-right" onclick="hideMedia()"><i class="fas fa-times-circle w3-xlarge"></i>
   </div>
 
-  <!-- ugly nav box <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a> -->
-  <a href="/index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
-  <a href="javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('div,p,span,img,a,body')).map(function(el){el.style[prefix + 'transform'] = 'rotate(' + (Math.floor(Math.random() * 3) - 1) + 'deg)';});});}())" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
-  <a onclick="javascript:var travoltaWTF = document.getElementById('travoltaWTF'); if(travoltaWTF){ document.getElementById('travoltaWTF').remove(); } else { var travolta = document.createElement('img'); travolta.setAttribute('id', 'travoltaWTF'); travolta.src='/images/travoltawtf.gif';travolta.alt='WTF!'; travolta.style.position='fixed'; travolta.style.left='0';travolta.style.bottom='0%';travolta.style.zIndex='10000'; document.body.appendChild(travolta);}" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Travolta"><i class="fa fa-user"></i></a>
-  <a href="#contact" onclick="myFunction('ContactMe')" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fa fa-envelope"></i></a>
+  <!-- ugly nav box <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fas fa-bars"></i></a> -->
+  <a href="/index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fas fa-home w3-margin-right"></i></a>
+  <a href="javascript:(function(){['', '-ms-', '-webkit-', '-o-', '-moz-'].map(function(prefix){Array.prototype.slice.call(document.querySelectorAll('div,p,span,img,a,body')).map(function(el){el.style[prefix + 'transform'] = 'rotate(' + (Math.floor(Math.random() * 3) - 1) + 'deg)';});});}())" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="News"><i class="fas fa-globe"></i></a>
+  <a onclick="javascript:var travoltaWTF = document.getElementById('travoltaWTF'); if(travoltaWTF){ document.getElementById('travoltaWTF').remove(); } else { var travolta = document.createElement('img'); travolta.setAttribute('id', 'travoltaWTF'); travolta.src='/images/travoltawtf.gif';travolta.alt='WTF!'; travolta.style.position='fixed'; travolta.style.left='0';travolta.style.bottom='0%';travolta.style.zIndex='10000'; document.body.appendChild(travolta);}" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Travolta"><i class="fas fa-user"></i></a>
+  <a href="#contact" onclick="myFunction('ContactMe')" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fas fa-envelope"></i></a>
   <div class="w3-dropdown-hover w3-hide-small">
-    <button onclick="document.getElementById('notifCount').style.display='none'" class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span id="notifCount" class="w3-badge w3-right w3-small w3-red">3</span></button>     
+    <button onclick="document.getElementById('notifCount').style.display='none'" class="w3-button w3-padding-large" title="Notifications"><i class="fas fa-bell"></i><span id="notifCount" class="w3-badge w3-right w3-small w3-red">3</span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="#friendrequest" class="w3-bar-item w3-button">One new friend request</a>
       <a onclick="catFinder()" class="w3-bar-item w3-button"><b>Lonely Local Cats </b>would like to chat</a>
@@ -115,9 +115,9 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
          <p class="w3-center"><img src="/images/masonavatar.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <p class="w3-center">I make dumb, fun, and sometimes cool things.</p>
          <hr>
-         <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-text-theme"></i> Content Creator</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Vermont, USA</p>
-         <p><i class="fa fa-mars fa-fw w3-margin-right w3-text-theme"></i> He/Him</p>
+         <p><i class="fas fa-briefcase fa-fw w3-margin-right w3-text-theme"></i> Content Creator</p>
+         <p><i class="fas fa-home fa-fw w3-margin-right w3-text-theme"></i> Vermont, USA</p>
+         <p><i class="fas fa-mars fa-fw w3-margin-right w3-text-theme"></i> He/Him</p>
         </div>
       </div>
       <br>
@@ -125,7 +125,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <!-- Accordion -->
       <div class="w3-card w3-round">
         <div class="w3-white">
-          <button onclick="myFunction('AboutMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> About Me</button>
+          <button onclick="myFunction('AboutMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-circle-notch fa-fw w3-margin-right"></i> About Me</button>
           <div id="AboutMe" class="w3-hide w3-container">
             <p>I am a Destination Imagination alum, and I carry the values and skills I learned from that program as the highest inspiration for what I do.<br>
               <br>My goal is to try and fill the world with as much harmless joy as I can.<br>
@@ -133,13 +133,13 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
             <br>For fun, I am a 2D animator, 3D modeler/rigger/animator, podcast producer, musician, electronics-tinkerer, actor, and general uber-nerd.<br>
           <br>I firmly believe in equality, social justice, and kindness. Black lives matter. Trans rights. You are valid.</p>
           </div>
-          <button onclick="myFunction('MyProjects')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Projects</button>
+          <button onclick="myFunction('MyProjects')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-calendar-check fa-fw w3-margin-right"></i> My Projects</button>
           <div id="MyProjects" class="w3-hide w3-container">
             <p>If you check out the post feed on this page, you can find every project I'm involved in, including guest appearances on others' content.<br>
             <br>Use the post sorting buttons to sort the things I am involved in by their media type.<hr>
             Almost all of my content is part of the <a href="https://scavengersnetwork.com">Scavengers Network</a></p>
           </div>
-          <button id="contact" onclick="myFunction('ContactMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-envelope fa-fw w3-margin-right"></i> Contact Me</button>
+          <button id="contact" onclick="myFunction('ContactMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-envelope fa-fw w3-margin-right"></i> Contact Me</button>
           <div id="ContactMe" class="w3-hide w3-container">
         <p>If you want to reach out casually and say hello, you can email:<br><br><a href="mailto:friends@masonamadeus.com"><b>Friends@MasonAmadeus.com</b></a><br><hr>
             If you want me to be involved in your project, or to be a guest on your show, email:<br><br><a href="mailto:collab@masonamadeus.com"><b>Collab@MasonAmadeus.com</b></a><br><hr>
@@ -147,13 +147,13 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <i>(Please note, I do not take on many paid projects.)</i><hr>
             Please include any pertinent information, like your pronouns, in your email.</p>
           </div>
-          <button onclick="myFunction('ProfessionalD')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-address-card fa fa-fw w3-margin-right"></i> Professional</button>
+          <button onclick="myFunction('ProfessionalD')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-address-card fas fa-fw w3-margin-right"></i> Professional</button>
           <div id="ProfessionalD" class="w3-hide w3-container">
             <p>This area under construction.<br>
             <br>I'll be fleshing this out soon with more details. But for now:<br>
             <br><a onclick="localStorage.clear('hideBar')" href="/professional.html"><b>Here is a more focused page for media inquiries.</b></a></p>
           </div>
-          <button onclick="myFunction('MyPortfolio')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Cool Logo</button>
+          <button onclick="myFunction('MyPortfolio')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-users fa-fw w3-margin-right"></i> My Cool Logo</button>
           <div id="MyPortfolio" class="w3-hide w3-container">
          <div class="w3-row-padding">
          <br>
@@ -191,7 +191,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <!-- Alert Box -->
       <div class="w3-animate-zoom w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
         <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-          <i class="fa fa-remove"></i>
+          <i class="fas fa-times"></i>
         </span>
         <p><strong>Hey!</strong></p>
         <p>Thanks for checking out my brain-feed.<br><br>I hope you find something here you like.</p>
@@ -209,15 +209,15 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
             <div class="w3-container w3-padding">
               <h6 class="w3-opacity">Create Post</h6>
               <p contenteditable="true" id="postage" class="w3-border w3-padding w3-col w3-margin-bottom" onfocus="this.innerHTML=' '">What's in your Brain-Zone?</p>
-              <button type="button" onclick="makePost(); document.getElementById('postage').innerHTML=' '" class="w3-button w3-theme"><i class="fa fa-pencil"></i> Post</button> 
+              <button type="button" onclick="makePost(); document.getElementById('postage').innerHTML=' '" class="w3-button w3-theme"><i class="fas fa-edit"></i> Post</button> 
 <hr>
               <div class="w3-center">
                 <h6 class="w3-opacity"><i>Sort Post Types:</i></h6>
-                <button type="button" onclick="onlyAllPosts()" class="w3-button w3-round w3-theme w3-row-padding"><i class="fa fa-refresh"></i> All</button>
-                <button type="button" onclick="sortPosts('audiopost')" class="w3-button w3-round w3-theme w3-row-padding"><i class="fa fa-microphone"></i> Audio</button>
-                <button type="button" onclick="sortPosts('videopost')" class="w3-button w3-round w3-theme w3-row-padding"><i class="fa fa-video-camera"></i> Video</button>
-                <button type="button" onclick="sortPosts('animpost')" class="w3-button w3-round w3-theme w3-row-padding"><i class="fa fa-film"></i> Animation</button>
-                <button type="button" onclick="sortPosts('textpost')" class="w3-button w3-round w3-theme w3-row-padding"><i class="fa fa-pencil-square-o"></i> Text</button>
+                <button type="button" onclick="onlyAllPosts()" class="w3-button w3-round w3-theme w3-row-padding"><i class="fas fa-sync-alt"></i> All</button>
+                <button type="button" onclick="sortPosts('audiopost')" class="w3-button w3-round w3-theme w3-row-padding"><i class="fas fa-microphone"></i> Audio</button>
+                <button type="button" onclick="sortPosts('videopost')" class="w3-button w3-round w3-theme w3-row-padding"><i class="fas fa-video"></i> Video</button>
+                <button type="button" onclick="sortPosts('animpost')" class="w3-button w3-round w3-theme w3-row-padding"><i class="fas fa-film"></i> Animation</button>
+                <button type="button" onclick="sortPosts('textpost')" class="w3-button w3-round w3-theme w3-row-padding"><i class="fas fa-book"></i> Text</button>
 
                 <div class="w3-padding"></div>
 </div>
@@ -252,8 +252,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <iframe src="https://pinecast.com/player/a82074b0-466d-4a88-a5c7-26a939c38f0b?theme=flat" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe> 
       
 <hr>
-<button type="button" onclick="window.open('https://scavengersnetwork.com/widk','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://plinkhq.com/i/1390415840')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://scavengersnetwork.com/widk','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://plinkhq.com/i/1390415840')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -272,8 +272,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <div class='youtube-player' data-id="_OPn5pW4ROA"></div>
 
 <hr>
-<button type="button" onclick="window.open('https://www.youtube.com/channel/UC6DjxczWaD3hM_7MJSVlqvQ','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://youtu.be/_OPn5pW4ROA')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://www.youtube.com/channel/UC6DjxczWaD3hM_7MJSVlqvQ','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/_OPn5pW4ROA')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -292,8 +292,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <div class='youtube-player' data-id="9ovFhjz0vN8"></div>
 
 <hr>
-<button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://youtu.be/9ovFhjz0vN8')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/9ovFhjz0vN8')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -313,8 +313,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   </p>
   <iframe src="https://pinecast.com/player/e381adab-c1f6-4c6b-ae60-f60460726a4b?theme=flat" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe>
 <hr>
-<button type="button" onclick="window.open('https://www.scavengersnetwork.com/alabaster','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://plnk.to/PODCUBE')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://www.scavengersnetwork.com/alabaster','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://plnk.to/PODCUBE')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -333,8 +333,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <div class='youtube-player' data-id="8Qd9C55IJJw"></div>
 
 <hr>
-<button type="button" onclick="window.open('https://youtube.com/masonandtucker','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://youtu.be/8Qd9C55IJJw')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://youtube.com/masonandtucker','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/8Qd9C55IJJw')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -354,8 +354,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <div class='youtube-player' data-id="ueLq6c_hEKI"></div>
 
 <hr>
-<button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://youtu.be/ueLq6c_hEKI')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/ueLq6c_hEKI')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -374,8 +374,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <div class='youtube-player' data-id="uxUVF330pgQ"></div>
 
 <hr>
-<button type="button" onclick="window.open('https://Patreon.com/thescavengersnetwork','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://youtu.be/uxUVF330pgQ')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://Patreon.com/thescavengersnetwork','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/uxUVF330pgQ')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -394,8 +394,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <div class='youtube-player' data-id="E-DFjKnQH54"></div>
 
 <hr>
-<button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://youtu.be/E-DFjKnQH54')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/E-DFjKnQH54')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -414,8 +414,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <iframe src="https://pinecast.com/player/d8631abd-7782-40f9-ba11-23d23c003031?theme=flat" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe>
 
 <hr>
-<button type="button" onclick="window.open('https://plnk.to/iDunnoRadio','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://plnk.to/iDunnoRadio/e/1000458490428')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://plnk.to/iDunnoRadio','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://plnk.to/iDunnoRadio/e/1000458490428')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -434,8 +434,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <div class='youtube-player' data-id="3Q7C4vvBXw8"></div>
 
 <hr>
-<button type="button" onclick="window.open('https://youtube.com/masonandtucker','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://youtu.be/3Q7C4vvBXw8')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://youtube.com/masonandtucker','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/3Q7C4vvBXw8')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -454,8 +454,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <div class="youtube-player" data-id="nwCilCV3h7o"></div>
 </p>
 <hr>
-<button type="button" onclick="this.innerHTML='Liked'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="this.innerHTML='Ahh nah, not sharable.'" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="this.innerHTML='Liked'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="this.innerHTML='Ahh nah, not sharable.'" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -485,8 +485,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <iframe class="audio-player" width="100%" src="https://plinkhq.com/i/1457127926/e/1000466981429?to=player" frameborder="0" scrolling="no"></iframe>
 <br><i>Embed stolen from <a href="plinkhq.com">Plink.</a></i>
 <hr>
-<button type="button" onclick="this.innerHTML='Liked'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://plinkhq.com/i/1457127926/e/1000466981429')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="this.innerHTML='Liked'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://plinkhq.com/i/1457127926/e/1000466981429')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -505,8 +505,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
         <iframe class="audio-player" width="100%" src="https://plinkhq.com/i/1303508917/e/1000488979993?to=player" frameborder="0" scrolling="no"></iframe>
 
 <hr>
-<button type="button" onclick="window.open('https://plnk.to/SpookySpouses','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://plnk.to/SpookySpouses/e/1000488979993')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://plnk.to/SpookySpouses','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://plnk.to/SpookySpouses/e/1000488979993')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -525,8 +525,8 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <br>Hers involved cats. Mine involved teenagers. A good time was had by all.</p>
   <div class='youtube-player' data-id="7E-dEkZoYiA"></div>
 <hr>
-<button type="button" onclick="window.open('https://www.youtube.com/channel/UCyKZcCNYyEi8e3ijjuQjXPw','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://youtu.be/7E-dEkZoYiA')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fa fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://www.youtube.com/channel/UCyKZcCNYyEi8e3ijjuQjXPw','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/7E-dEkZoYiA')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -555,11 +555,11 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
           <span>Several Dozen Ants</span>
           <div class="w3-row w3-opacity">
             <div class="w3-half">
-              <button class="w3-button w3-block w3-green w3-section" title="Accept" onclick="document.getElementById('friendrequest').style.display='none'; document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).setAttribute('src','https://www.cs.huji.ac.il/~irush/scripts/antsbml.js')"><i class="fa fa-check"></i></button>
+              <button class="w3-button w3-block w3-green w3-section" title="Accept" onclick="document.getElementById('friendrequest').style.display='none'; document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).setAttribute('src','https://www.cs.huji.ac.il/~irush/scripts/antsbml.js')"><i class="fas fa-check"></i></button>
 
             </div>
             <div class="w3-half">
-              <button class="w3-button w3-block w3-red w3-section" title="Decline" onclick="document.getElementById('friendrequest').style.display='none'"><i class="fa fa-remove"></i></button>
+              <button class="w3-button w3-block w3-red w3-section" title="Decline" onclick="document.getElementById('friendrequest').style.display='none'"><i class="fas fa-times"></i></button>
             </div>
           </div>
         </div>
@@ -567,7 +567,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <br>
       
       <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-        <i class="fa fa-dollar w3-center w3-xxlarge"></i><i class="fa fa-coffee w3-center w3-xxlarge"></i>
+        <i class="fas fa-dollar w3-center w3-xxlarge"></i><i class="fas fa-coffee w3-center w3-xxlarge"></i>
         <p class="w3-center"><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Throw Coffee At Me.', '#6f37b3', 'T6T227DZ0');kofiwidget2.draw();</script></p>
         <p class="w3-center">Support me with Money!</p>
       </div>
@@ -576,7 +576,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
         <!-- if you email me about this to say you found a 'bug' in my website then I am going to be so unimpressed. 
           However if you email me because you read this comment, I will be more impressed.-->
-        <p><i onclick="myFunction('bugfeat')" class="fa fa-bug w3-xxlarge"></i>
+        <p><i onclick="myFunction('bugfeat')" class="fas fa-bug w3-xxlarge"></i>
         <span id="bugfeat" class="w3-hide">This is not an easter egg, it's a bug.</span></p>
       </div>
       
@@ -796,7 +796,7 @@ function catFinder() {
     postparent.insertBefore(newDiv, currentDiv.nextSibling); 
     
     newDiv.insertAdjacentHTML('afterbegin', '<img src="/images/intruderavatar.png" alt="Avatar" class="w3-left w3-circle w3-margin-right w3-margin-top" style="width:60px"><span class="w3-right w3-opacity w3-margin-top">Just Now</span><h4 class="w3-margin-top w3-padding-large">Random Intruder</h4><br><hr class="w3-clear w3-margin-top">');
-    newDiv.insertAdjacentHTML('beforeend', '<hr><button type="button" onclick="this.innerHTML=\'You Just Liked Your Own Post\'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i> Like</button><button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"> <i class="fa fa-share"></i> Share</button>');
+    newDiv.insertAdjacentHTML('beforeend', '<hr><button type="button" onclick="this.innerHTML=\'You Just Liked Your Own Post\'" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button><button type="button" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"> <i class="fas fa-share"></i> Share</button>');
   }
 </script>
 
