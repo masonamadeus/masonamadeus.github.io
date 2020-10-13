@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>Mason Amadeus - Brain Feed</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +11,39 @@
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
+
+<script>
+window.onload = function() {
+
+  if(localStorage.getItem("spritzCount")===null) {
+ 
+   document.getElementById('sprayCounter').innerHTML = "Not Purchased"
+   
+    } else {
+
+      document.getElementById('sprayCounter').innerHTML = localStorage.spritzCount
+
+  }
+
+var uwu = sessionStorage.getItem("Authy01")
+
+if(uwu === "Twue") {
+var client = new XMLHttpRequest();
+client.open('GET', '/aX21tb.txt');
+client.onreadystatechange = function() {
+  document.getElementById("accessCodeSpace").value = client.responseText;
+}
+client.send();
+}
+
+
+
+}
+</script>
+
+</head>
+
+
 <body class="w3-theme-l5">
 
   <div class="w3-top">
@@ -28,26 +62,36 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:100px">   
 
     <!-- SPRAY BUTTON -->
-    <div id ="spraybutton" class="w3-col w3-center">
-      <div class="w3-card w3-round w3-white w3-button w3-xxlarge w3-padding-large" onclick="faceSpray(document.getElementById('URL').value)">
+<div id ="spraybutton" class="w3-col w3-center">
+  <div class="w3-card w3-round w3-white w3-button w3-xxlarge w3-padding-large" onclick="faceSpray(document.getElementById('accessCodeSpace').value)">
       <strong>SEND WETS</strong><br>
-        <i class="w3-xxlarge fa fa-tint"></i><BR>
+        <i class="w3-xxlarge fa fa-tint"></i> <strong id="sprayCounter"></strong><BR>
         <strong>CLICK TO SPRAY</strong>
-      </div> <br><br><br>
-      <div class="w3-padding-large">
-      <input id="URL" type="text" placeholder="Access Code?">
-      </div>
-    
-    <!-- End SPRAY BUTTON -->
+  </div> <br><br><br>
+    <div class="w3-padding-large">
+      <b>Access Code:</b><br>
+      <input id="accessCodeSpace" class="w3-margin-bottom" type="text" placeholder="???"><br>
+      <em class="w3-margin-top">(You may want to copy the above code; if you close this window it may disappear and then you won't be able to spray)<em>
     </div>
+</div>
 
-    <div id ="runout" class="w3-col w3-center" style="display: none;">
-      <div class="w3-card w3-round w3-white w3-button w3-xxlarge w3-padding-large">
+<!-- Out of Sprays Box -->
+
+<div id ="runout" class="w3-col w3-center" style="display: none;">
+  <div class="w3-card w3-round w3-white w3-button w3-xxlarge w3-padding-large">
       <strong>OH NO!</strong><br>
       <i class="fas fa-tint-slash"></i><BR>
         <strong>OUT OF WATER</strong>
-      </div> <br><br><br>
-    </div>
+  </div>
+  <br><br><br>
+</div>
+<div class="w3-col w3-center">
+  <br><br>
+  <div class="w3-center w3-round w3-theme-l4 w3-border w3-theme-border">
+    <div class="w3-margin">Wait for one spray to finish before sending the next, they do not queue (so that it processes faster). If you spray too quickly it won't go through.</div>
+
+  </div>
+</div>
     
   <!-- End Grid -->
 </div>
@@ -58,29 +102,48 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <script>
 
 function faceSpray(access) {
-  if(localStorage.getItem("spritzCount")===null) {
-  localStorage.setItem("spritzCount", 0)
-  console.log("created cookie")
-
-} else if (localStorage.getItem("spritzCount")!==null) {
       var currentSprays = parseInt(localStorage.getItem('spritzCount'))
-      var sprayMax = 19
-
-  if (currentSprays <= sprayMax) {
-    // var _0x95fa=["\x67\x6F\x74\x63\x68\x61","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x6F\x72\x73\x2D\x61\x6E\x79\x77\x68\x65\x72\x65\x2E\x68\x65\x72\x6F\x6B\x75\x61\x70\x70\x2E\x63\x6F\x6D\x2F\x68\x74\x74\x70\x73\x3A\x2F\x2F","\x2E\x6E\x67\x72\x6F\x6B\x2E\x69\x6F","\x50\x4F\x53\x54","\x6F\x70\x65\x6E","\x43\x6F\x6E\x74\x65\x6E\x74\x2D\x54\x79\x70\x65","\x61\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E\x2F\x6A\x73\x6F\x6E","\x73\x65\x74\x52\x65\x71\x75\x65\x73\x74\x48\x65\x61\x64\x65\x72","\x73\x74\x72\x69\x6E\x67\x69\x66\x79","\x73\x65\x6E\x64"];var xhr= new XMLHttpRequest();var value=_0x95fa[0];var address=_0x95fa[1]+ access+ _0x95fa[2];xhr[_0x95fa[4]](_0x95fa[3],address,true);xhr[_0x95fa[7]](_0x95fa[5],_0x95fa[6]);xhr[_0x95fa[9]](JSON[_0x95fa[8]]({value:value}))
-    var spraid = (parseInt(localStorage.getItem('spritzCount'))+1);
-    localStorage.setItem("spritzCount", spraid.toString());
-    console.log(localStorage.getItem("spritzCount"));
-  }
+      var sprayMax = 1
 
   if (currentSprays >= sprayMax) {
+      var xhr = new XMLHttpRequest();
+      var value = "gotcha";
+      var address = "https://cors-anywhere.herokuapp.com/https://" + access + ".ngrok.io"
+      xhr.open("POST", address, true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({
+    value: value
+}));
+
+    var spraid = (parseInt(localStorage.getItem('spritzCount'))-1);
+    localStorage.setItem("spritzCount", spraid.toString());
+    console.log(localStorage.getItem("spritzCount"));
+    }
+
+  else if (currentSprays <= sprayMax) {
     document.getElementById('spraybutton').style.display = "none";
     document.getElementById('runout').style.display = "block";
-    console.log("done snet nothing")
+    console.log("done sent nothing")
 
-  }
+    }
+
+document.getElementById('sprayCounter').innerHTML = localStorage.spritzCount;
 }
+</script>
+<script>
+/* window.onload = function(){
+
+var uwu = sessionStorage.getItem("Authy01")
+
+if (uwu === "twue") {
+var client = new XMLHttpRequest();
+client.open('GET', '/aX21tb.txt');
+client.onreadystatechange = function() {
+  document.getElementById("accessCodeSpace").value = client.responseText;
 }
+client.send();
+} else if (uwu === null) { }
+} */
   </script>
 </body>
 </html> 
