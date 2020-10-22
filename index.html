@@ -56,6 +56,7 @@ function hideMedia() {
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="/all.min.css">
+<script src="/bug.js"></script>
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
@@ -70,7 +71,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 
   <!-- Media Inquiries Notifier Bar-->
   <div id="inquiries" class="w3-bar w3-amber w3-hide-small w3-animate-top" style="display: none">
-      <a href="/professional.html" class="w3-bar-item" style="margin-left: 40%;"><b>Media Inquiries</b></a>
+      <a href="/professional.html" class="w3-bar-item" style="margin-left: 40%;"><b>Professional Inquiries</b></a>
       <button class="w3-bar-item w3-button w3-right" onclick="hideMedia()"><i class="fas fa-times-circle w3-xlarge"></i>
   </div>
 
@@ -80,7 +81,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   <a onclick="javascript:var travoltaWTF = document.getElementById('travoltaWTF'); if(travoltaWTF){ document.getElementById('travoltaWTF').remove(); } else { var travolta = document.createElement('img'); travolta.setAttribute('id', 'travoltaWTF'); travolta.src='/images/travoltawtf.gif';travolta.alt='WTF!'; travolta.style.position='fixed'; travolta.style.left='0';travolta.style.bottom='0%';travolta.style.zIndex='10000'; document.body.appendChild(travolta);}" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Travolta"><i class="fas fa-user"></i></a>
   <a href="#contact" onclick="myFunction('ContactMe')" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fas fa-envelope"></i></a>
   <div class="w3-dropdown-hover w3-hide-small">
-    <button onclick="document.getElementById('notifCount').style.display='none'" class="w3-button w3-padding-large" title="Notifications"><i class="fas fa-bell"></i><span id="notifCount" class="w3-badge w3-right w3-small w3-red">3</span></button>     
+    <button onclick="document.getElementById('notifCount').style.display='none'" class="w3-button w3-padding-large" title="Notifications"><i class="fas fa-bell"></i><span id="notifCount" class="w3-badge w3-right w3-small w3-red">4</span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="/spritz.html" class="w3-bar-item w3-button"><b>Buy Twitch-Sprays Here</b></a>
       <a href="#friendrequest" class="w3-bar-item w3-button">One new friend request</a>
@@ -129,12 +130,12 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
           <button onclick="myFunction('AboutMe')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-circle-notch fa-fw w3-margin-right"></i> About Me</button>
           <div id="AboutMe" class="w3-hide w3-container">
             <p>I am a Destination Imagination alum, and I carry the values and skills I learned from that program as the highest inspiration for what I do.<br>
-              <br>My goal is to try and fill the world with as much harmless joy as I can.<br>
-              <br>For work, I am an audio/technology engineer, sound designer, junior RF engineer, producer, copywriter, and On-Air radio talent.<br>
+              <br>My personal goal is to try and fill the world with as much harmless joy as I can.<br>
+              <br>For work, I am an audio/broadcast engineer, sound designer, junior RF engineer, producer, copywriter, and On-Air radio talent.<br>
             <br>For fun, I am a 2D animator, 3D modeler/rigger/animator, podcast producer, musician, electronics-tinkerer, actor, and general uber-nerd.<br>
           <br>I firmly believe in equality, social justice, and kindness. Black lives matter. Trans rights. You are valid.</p>
           </div>
-          <button onclick="myFunction('MyProjects')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-calendar-check fa-fw w3-margin-right"></i> My Projects</button>
+          <button onclick="myFunction('MyProjects')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-flask fa-fw w3-margin-right"></i> My Projects</button>
           <div id="MyProjects" class="w3-hide w3-container">
             <p>If you check out the post feed on this page, you can find every project I'm involved in, including guest appearances on others' content.<br>
             <br>Use the post sorting buttons to sort the things I am involved in by their media type.<hr>
@@ -175,12 +176,12 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
           <p>
             <span class="w3-tag w3-small w3-theme-d5">Audio Engineering</span>
             <span class="w3-tag w3-small w3-theme-d4">Sound Design</span>
-            <span class="w3-tag w3-small w3-theme-d3">Acting</span>
+            <span class="w3-tag w3-small w3-theme-d3">Broadcast Engineering</span>
             <span class="w3-tag w3-small w3-theme-d2">Writing</span>
             <span class="w3-tag w3-small w3-theme-d1">Videography</span>
             <span class="w3-tag w3-small w3-theme">Blender 3D</span>
             <span class="w3-tag w3-small w3-theme-l1">3D & 2D Animation</span>
-            <span class="w3-tag w3-small w3-theme-l2">3D Modeling</span>
+            <span class="w3-tag w3-small w3-theme-l2">Acting</span>
             <span class="w3-tag w3-small w3-theme-l3">Electronics</span>
             <span onclick="javascript:location.href='/spritz.html'" class="w3-tag w3-small w3-theme-l4">Streaming</span>
             <span onclick="document.body.contentEditable='true'; document.designMode='on'; void 0" class="w3-tag w3-small w3-theme-l5">High-Effort Jokes</span>
@@ -261,6 +262,27 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
       
 <!-- POST END -->
 
+<!-- ALLYHAB POST START -->
+<div class="audiopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
+        
+  <img src="/images/allyhabavatar.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+  <span class="w3-right w3-opacity">11 mins</span>
+  <h4>Alabaster's Haberdashery</h4><br>
+ 
+<hr class="w3-clear">
+  
+  <p>In late 2019, my friend Jordan Reed and I began receiving pale blue flash drives in the mail.<br>
+  <br>On each flash drive was an mp3 file, and a single text document that simply read "PodCube, The Future is Yesterday".<br>
+  <br>Apparently this is a podcast from the past? In a hat shop?<br>
+  <br>I dunno. All I know is that I got a dead bird in the mail when we stopped uploading the mp3s so... here we are.<br>
+  </p>
+  <iframe src="https://pinecast.com/player/e381adab-c1f6-4c6b-ae60-f60460726a4b?theme=flat" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe>
+<hr>
+<button type="button" onclick="window.open('https://www.scavengersnetwork.com/alabaster','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://plnk.to/PODCUBE')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
+</div>
+<!-- POST END -->
+
 <!-- TRASH OFF POST START --> 
 <div class="videopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
          
@@ -301,27 +323,6 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </div>
 <!-- POST END -->
 
-<!-- ALLYHAB POST START -->
-<div class="audiopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
-        
-  <img src="/images/allyhabavatar.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-  <span class="w3-right w3-opacity">11 mins</span>
-  <h4>Alabaster's Haberdashery</h4><br>
- 
-<hr class="w3-clear">
-  
-  <p>In late 2019, my friend Jordan Reed and I began receiving pale blue flash drives in the mail.<br>
-  <br>On each flash drive was an mp3 file, and a single text document that simply read "PodCube, The Future is Yesterday".<br>
-  <br>Apparently this is a podcast from the past? In a hat shop?<br>
-  <br>I dunno. All I know is that I got a dead bird in the mail when we stopped uploading the mp3s so... here we are.<br>
-  </p>
-  <iframe src="https://pinecast.com/player/e381adab-c1f6-4c6b-ae60-f60460726a4b?theme=flat" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe>
-<hr>
-<button type="button" onclick="window.open('https://www.scavengersnetwork.com/alabaster','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://plnk.to/PODCUBE')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
-</div>
-<!-- POST END -->
-
 <!-- TAM VID POST START --> 
 <div class="videopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
          
@@ -342,24 +343,23 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </div>
 <!-- POST END -->
 
-
-<!-- FIXTURES POST START --> 
-<div class="videopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
+<!-- GOOD SHIP ICARUS POST START --> 
+<div class="audiopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
          
-        <img src="/images/fishstickavatar.jpg" alt="Fishstick" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">21 mins</span>
-        <h4>Fishstick from WIDK</h4><br>
+  <img src="/images/masonavatar.png" alt="Fishstick" class="w3-left w3-circle w3-margin-right" style="width:60px">
+  <span class="w3-right w3-opacity">49 mins</span>
+  <h4>Mason Amadeus</h4><br>
 
 <hr class="w3-clear">
 
-        <p>I was going to do a youtube series of building useless gadgets. <br>
-        <br>I only ended up making one video and never fully publishing it, but hopefully soon I'll revisit the concept because I had a lot of fun.<br>
-        <br>Anyways, it's here if you want to see it!</p>
-        <div class='youtube-player' data-id="ueLq6c_hEKI"></div>
+  <p>We did a very special audiodrama episode for a WIDK holiday special.<br>
+  <br>We enlisted the talent of Ty (from <a href="https://plinkhq.com/i/1332525305">Side Character Quest</a>), to join the WIDK crew on a Space-Force mission to save the planet from a trash-asteroid (trash-steroid? No that sounds like drugs) hurtling towards earth from the sun.<br>
+  <br>They created some very unique and definitely not impotent characters, and I had a ball with the sound design. This can be enjoyed without any other context!</p>
+  <iframe src="https://pinecast.com/player/d8631abd-7782-40f9-ba11-23d23c003031?theme=flat" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe>
 
 <hr>
-<button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://youtu.be/ueLq6c_hEKI')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
+<button type="button" onclick="window.open('https://plnk.to/iDunnoRadio','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://plnk.to/iDunnoRadio/e/1000458490428')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -383,6 +383,26 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </div>
 <!-- POST END -->
 
+<!-- FIXTURES POST START --> 
+<div class="videopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
+         
+  <img src="/images/fishstickavatar.jpg" alt="Fishstick" class="w3-left w3-circle w3-margin-right" style="width:60px">
+  <span class="w3-right w3-opacity">21 mins</span>
+  <h4>Fishstick from WIDK</h4><br>
+
+<hr class="w3-clear">
+
+  <p>I was going to do a youtube series of building useless gadgets. <br>
+  <br>I only ended up making one video and never fully publishing it, but hopefully soon I'll revisit the concept because I had a lot of fun.<br>
+  <br>Anyways, it's here if you want to see it!</p>
+  <div class='youtube-player' data-id="ueLq6c_hEKI"></div>
+
+<hr>
+<button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
+<button type="button" onclick="shareButton('https://youtu.be/ueLq6c_hEKI')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
+</div>
+<!-- POST END -->
+
 <!-- BREAD ANIMATION POST START --> 
 <div class="animpost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
          
@@ -400,26 +420,6 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 <hr>
 <button type="button" onclick="window.open('https://twitter.com/Fishstick_WIDK','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
 <button type="button" onclick="shareButton('https://youtu.be/E-DFjKnQH54')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
-</div>
-<!-- POST END -->
-
-<!-- GOOD SHIP ICARUS POST START --> 
-<div class="audiopost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>
-         
-  <img src="/images/masonavatar.png" alt="Fishstick" class="w3-left w3-circle w3-margin-right" style="width:60px">
-  <span class="w3-right w3-opacity">49 mins</span>
-  <h4>Mason Amadeus</h4><br>
-
-<hr class="w3-clear">
-
-  <p>We did a very special audiodrama episode for a WIDK holiday special.<br>
-  <br>We enlisted the talent of Ty (from <a href="https://plinkhq.com/i/1332525305">Side Character Quest</a>), to join the WIDK crew on a Space-Force mission to save the planet from a trash-asteroid (trash-steroid? No that sounds like drugs) hurtling towards earth from the sun.<br>
-  <br>They created some very unique and definitely not impotent characters, and I had a ball with the sound design. This can be enjoyed without any other context!</p>
-  <iframe src="https://pinecast.com/player/d8631abd-7782-40f9-ba11-23d23c003031?theme=flat" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe>
-
-<hr>
-<button type="button" onclick="window.open('https://plnk.to/iDunnoRadio','_blank')" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-thumbs-up"></i> Like</button> 
-<button type="button" onclick="shareButton('https://plnk.to/iDunnoRadio/e/1000458490428')" class="w3-button w3-theme-d2 w3-margin-bottom w3-margin-left"><i class="fas fa-share"></i> Share</button> 
 </div>
 <!-- POST END -->
 
@@ -465,7 +465,7 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 
 <!-- GUEST APPEARANCES BELOW THIS LINE --> 
 <div class="shitpost w3-container w3-card w3-white w3-round w3-margin w3-animate-bottom"><br>           
-        <p><b>Below this point are mostly my guest appearances.</b><br>
+        <p><i class="fas fa-arrow-down w3-xxlarge w3-left"></i><i class="fas fa-arrow-down w3-xxlarge w3-right"></i><div class="w3-center"><b>Below this point are mostly my guest appearances.</b><br></div>
         <hr>
         Sometimes I might hide cool stuff down here tho. <br>
         <br>IDK, I'm not really planning this out that thoroughly.</p>
@@ -543,23 +543,26 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
     <div class="w3-col m2">
       <div class="w3-card w3-round w3-white w3-center">
         <div class="w3-container">
-          <p>Upcoming Events:</p>
-          <img src="/images/evilpowermaster.png" alt="Forest" style="width:100%;">
-          <p><strong>War With The Evil Power Master: LIVE</strong></p>
-          <p>Last Friday of Each Month<br>21:00</p>
-          <p><a href="https://twitch.tv/thescavengersnetwork" target="_blank" class="w3-button w3-block w3-theme-l4">Info</a></p>
+          <p><b>Upcoming Events:</b></p>
+          <img src="/images/facespray.png" alt="Face Spraying Robot" style="width:100%;">
+          <p><strong>Face Spraying Robot: LIVE</strong></p>
+          <p>Most Thursday Nights<br>19:30</p>
+          <p><a href="https://twitch.tv/thescavengersnetwork" target="_blank" class="w3-button w3-block w3-theme-l4">Twitch Channel</a></p>
+          <p><button onclick="myFunction('sprayInfo')" class='w3-button w3-block w3-theme-l4'>Info</button></p>
+          <div id="sprayInfo" class="w3-hide w3-left-align w3-theme-l5"><p>I built a robot out of a Keurig machine, and wrote a bunch of code so that you can spray me in the face on command while I play scary videogames live on twitch.<br><br>You can buy a bundle of sprays through my website, OR you can donate $1 to my <a href="https://ko-fi.com/masonamadeus">Ko-Fi</a> to set it off!</p></div>
+          <p><a href="/spritz.html" target="_blank" class="w3-button w3-block w3-theme-l4">Buy 6 Sprays for $5</a></p>
         </div>
       </div>
       <br>
       
       <div id='friendrequest' class="w3-card w3-round w3-white w3-center">
         <div class="w3-container">
-          <p>Friend Request</p>
+          <p><b>Friend Request</b></p>
           <img src="/images/antavatar.jpg" alt="Avatar" class="w3-circle" style="width:70%"><br>
-          <span>Several Dozen Ants</span>
+          <span>Several Dozen Insects</span>
           <div class="w3-row w3-opacity">
             <div class="w3-half">
-              <button class="w3-button w3-block w3-green w3-section" title="Accept" onclick="document.getElementById('friendrequest').style.display='none'; document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).setAttribute('src','https://www.cs.huji.ac.il/~irush/scripts/antsbml.js')"><i class="fas fa-check"></i></button>
+              <button class="w3-button w3-block w3-green w3-section" title="Accept" onclick="document.getElementById('friendrequest').style.display='none';bugTime()"><i class="fas fa-check"></i></button>
 
             </div>
             <div class="w3-half">
@@ -661,6 +664,17 @@ function catFinder() {
   kitty.setAttribute('frameBorder', '0')
   document.body.appendChild(kitty);
 }
+
+function bugTime(){
+  // default fruit fly bug:
+  new BugController({
+			});
+
+			// default spiders:
+			new SpiderController({
+			});
+}
+
 
 </script>
 
