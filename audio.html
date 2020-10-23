@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mason Amadeus</title>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="/all.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+</head>
+
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <!-- ugly nav box <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a> -->
+  <a href="/index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i></a>
+  <a href="#ContactMe" onclick="myFunction('ContactMe')" class="w3-bar-item w3-button w3-padding-large w3-hover-white" title="Contact Info"><i class="fa fa-envelope"></i></a>
+  <a href="/index.html" class="w3-bar-item w3-button w3-right w3-padding-large w3-hover-white w3-hide-small" title="My Account">
+    <img src="/images/masoninitials.png" class="w3-circle" style="height:30px;width:30px" alt="Avatar">
+  </a>
+ </div>
+</div>
+
+<!-- Navbar on small screens
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+-->
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center"><b>Mason Amadeus</b></h4>
+         <p class="w3-center"><img src="/images/masonavatar.png" class="w3-circle" style="height:250px;width:250px" alt="Avatar"></p>
+         <p class="w3-center">Here is a small sample of my audio production work.</p>
+         <hr>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Vermont, USA</p>
+         <p><i class="fa fa-mars fa-fw w3-margin-right w3-text-theme"></i> He/Him</p>
+         <hr>
+              <!-- Interests --> 
+              <div class="w3-container">
+                <p>Skills</p>
+                <p>
+                  <span class="w3-tag w3-small w3-theme-d5">Audio Engineering</span>
+                  <span class="w3-tag w3-small w3-theme-d4">Sound Design</span>
+                  <span class="w3-tag w3-small w3-theme-d3">Broadcast Engineering</span>
+                  <span class="w3-tag w3-small w3-theme-d2">Writing</span>
+                  <span class="w3-tag w3-small w3-theme-d1">Videography</span>
+                  <span class="w3-tag w3-small w3-theme">Blender 3D</span>
+                  <span class="w3-tag w3-small w3-theme-l1">3D & 2D Animation</span>
+                  <span class="w3-tag w3-small w3-theme-l2">Acting</span>
+                  <span class="w3-tag w3-small w3-theme-l3">Electronics</span>
+                  <span class="w3-tag w3-small w3-theme-l4">Streaming</span>
+                </p>
+              </div>
+        </div>
+      </div>
+      </div>
+
+
+
+      <div class="w3-col m9 w3-padding-large">
+     <!-- Accordion -->
+     <p class='w3-center'><em>You can click each elements' title bar to collapse or expand it!</em></p>
+     <div class="w3-card w3-round">
+      <div class="w3-white">
+        <button onclick="myFunction('karlRoberts')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-cut fa-fw w3-margin-right"></i> Granite Mikes Winner 2017 - Karl Robert's Cuts For Men</button>
+        <div id="karlRoberts" class="w3-show w3-hide w3-container w3-margin-top">
+          <div class='w3-center'><img style="width:35%" src="/images/NHABkarlroberts.jpg" /></div>  
+          <audio class='w3-margin-top w3-bar' controls>
+                <source src="/audio/KarlRoberts_GraniteMike2017.mp3" type="audio/mpeg">
+              Uh-oh! Your browser does not support the audio element. You can download it though, that should work!
+              </audio> 
+              <p class='w3-center'>You can download this audio by clicking <a href="/audio/KarlRoberts2017.mp3" download>HERE</a>.</p>
+              <hr>
+              <p>I wrote the copy for, recorded, and produced this commercial in 2017. The guidance I was given was: "theme it for 'back to school' season".<br> <br>
+              Because this is a commercial for a set of loud music stations, it's not a very <em>dynamic</em> piece of audio work, but I'm really happy with how it turned out.</p>
+              <br>
+        </div>
+
+
+        <button onclick="myFunction('salsaSisters')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fas fa-utensils fa-fw w3-margin-right"></i> Granite Mikes Winner 2020 - Salsa Sisters</button>
+        <div id="salsaSisters" class="w3-show w3-hide w3-container w3-margin-top">
+          <div class='w3-center'><img style="width:35%" src="/images/NHABsalsa.png" /></div>  
+          <audio class='w3-margin-top w3-bar' controls>
+                <source src="/audio/SalsaSisters_GraniteMike2020.mp3" type="audio/mpeg">
+              Whoops! Your browser does not support the audio element. You should at least be able to download it, right?
+              </audio> 
+              <p class='w3-center'>You can download this audio by clicking <a href="/audio/SalsaSisters2020.mp3" download>HERE</a>.</p>
+              <hr>
+              <p>I also wrote, recorded, and produced this spot! Salsa Sisters were the winner of a free advertising contest, and the only instruction I was given on this was: "make something fun". <br><br>
+              Again from a technical standpoint, because it was a commercial for a HOT AC station, it is highly compressed and loud.</p><br>
+        </div>
+
+
+        <button onclick="myFunction('allyHab')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fab fa-redhat fa-fw w3-margin-right"></i> Creative Sound Design - Alabaster's Haberdashery E01</button>
+        <div id="allyHab" class="w3-show w3-hide w3-container w3-margin-top">
+            <div class='w3-center'><img style="width:35%" src="/images/allyhabavatar.jpg" /></div>
+            <audio class="w3-margin-top w3-bar" controls>
+                <source src="/audio/AlabastersHaberdasheryE01_Creative Sound Design.mp3" type="audio/mpeg">
+              Awh beans, your browser does not support the audio element. I think you can still download it and listen to it that way.
+              </audio> 
+              <p class='w3-center'>You can download this audio by clicking <a href="/audio/AlabastersHaberdasheryE01_Creative Sound Design.mp3" download>HERE</a>.</p>
+              <hr>
+              <p>My friend Jordan and I created a narrative comedy-fiction podcast about a hat store in the 1800's that is being recorded via-time travel. <b>I recognize that this is a very silly thing, and perhaps not the most 'professional' piece of production,
+                but I wanted to include it because it is a much better example of my skillset than just commercial spots.</b><br><br> Jordan plays the main character, I perform all the ancillary voices, and I completely produced this first episode. This podcast is appropriate for all ages.<br><br>
+                In the course of my radio work currently, I have not had as much occasion to produce longer-form dynamic content, because our stations' formats don't really call for it. However, I am very passionate about sound design and more involved production, so I wanted to demonstrate my versatility in some way.
+              </p>
+              <br>
+            </div>
+     
+       </div>     
+    </div>
+
+    </div>
+  </div>
+
+</div>
+
+    <script>
+      // Accordion
+      function myFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-theme-d1";
+        } else { 
+          x.className = x.className.replace("w3-show", "");
+          x.previousElementSibling.className = 
+          x.previousElementSibling.className.replace(" w3-theme-d1", "");
+        }
+      }
+      </script>
+      </body>
+      </html>
