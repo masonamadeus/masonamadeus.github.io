@@ -25,14 +25,6 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   top: 0;
 }
 
-.twitch .twitch-chat {
-  height: 400px;
-}
-
-.twitch .twitch-chat iframe {
-  width: 100%;
-  height: 100%;
-}
 
 @media screen and (min-width: 850px) {
   .twitch {
@@ -40,18 +32,10 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
   }
   
   .twitch .twitch-video {
-    width: 75%;
+    width: 100%;
     padding-top: 42.1875%;
   }
 
-  .twitch .twitch-chat {
-    width: 25%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
 }
 </style>
 
@@ -81,10 +65,10 @@ var _0x18b5=['B3bLBG==','B25YzwfKExn0yxrLy2HHBMDL','z2v0sxrLBq==','rMfSC2u=','Aw
 
 <div class="twitch">
 <div class="twitch-video" id="scavTwitV"></div>
-<div class="twitch-chat" id="scavTwitC"><iframe
+<!-- <div class="twitch-chat" id="scavTwitC"><iframe
   scrolling="yes"
-  src="https://www.twitch.tv/embed/thescavengersnetwork/chat?parent=masonamadeus.com"></iframe></div>
-</div>
+  src="https://www.twitch.tv/embed/thescavengersnetwork/chat?parent=https://masonamadeus.github.io"></iframe></div>
+</div> -->
 
   
 <div class="w3-col w3-center w3-margin-top">
@@ -143,23 +127,23 @@ var _0x3812=['vvne','BMfTzq==','CMvWBgfJzq==','y2fWDhvYzq==','Bg9JyxrPB24=','y3j
   <!-- end page contain -->
 </div>
   
-<!-- <script src="https://embed.twitch.tv/embed/v1.js"></script>
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
 <script type="text/javascript">
-  new Twitch.Embed("twitch-embed", {
+  new Twitch.Embed("scavTwitV", {
     width: 854,
     height: 480,
     channel: "thescavengersnetwork",
   });
 </script>
--->
 
-<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+
+<!-- <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 <script type="text/javascript">
   var options = {
     channel: "thescavengersnetwork",
   };
   var player = new Twitch.Player("scavTwitV", options);
-  player.setVolume(0.5);
+  player.setVolume(0.5); -->
 </script>
 
 
