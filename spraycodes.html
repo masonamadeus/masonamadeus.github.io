@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="/all.min.css">
+
+    <title>Loading...</title>
+    <script>
+function sprayPASS (secretword){
+    if (secretword === "4puns4u"){
+var punword = localStorage.getItem('punCode');
+        if (punword === null) {
+localStorage.setItem("spritzCount", "31");
+localStorage.setItem("paypalue", "False");
+sessionStorage.setItem("Authy01","Twue");
+sessionStorage.setItem("Authy02","Fawse");
+localStorage.setItem("punCode", "aXbb2cY");
+alert("Success! Great pun work, James!");
+window.location.href = "/spritz.html"
+        } else { 
+            sessionStorage.setItem("Authy01", "Twue");
+            sessionStorage.setItem("Authy02", "Fawse");
+            alert("Code Already Redeemed. Access Code has been refreshed for the original redeemer.");
+            window.location.href = "/spritz.html";
+        }
+    } else {
+
+alert("Nope, not a code. If it's not a typo and you're trying to STEAL SPRAYS?! Shame on you!");
+
+    }
+
+
+
+
+}
+</script>
+</head>
+<body class='w3-theme-l5'>
+   <div class="w3-container w3-content" style="max-width:1400px;margin-top:100px">
+<div class='w3-col w3-center'>
+    <div class='w3-margin-bottom'>
+    <input id='pWrd' type="text" class='w3-xxlarge' placeholder="Password">
+    </div>
+    <div class="w3-card w3-round w3-white w3-button w3-xxlarge w3-padding-large" onclick='sprayPASS(document.getElementById("pWrd").value)'>Submit Password</div>
+<div class="w3-round w3-white w3-padding-large w3-margin-top"><p>If you redeem a code and then accidentally close this window: you will lose your access code. To get it back, return to this page and re-enter your code.</p></div>
+
+</div>
+
+    </div>
+</body>
+</html>
