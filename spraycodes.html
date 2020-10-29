@@ -12,32 +12,58 @@
     <title>Loading...</title>
     <script>
 function sprayPASS (secretword){
-    if (secretword === "4puns4u"){
-var punword = localStorage.getItem('punCode');
-        if (punword === null) {
-localStorage.setItem("spritzCount", "31");
-localStorage.setItem("paypalue", "False");
-sessionStorage.setItem("Authy01","Twue");
-sessionStorage.setItem("Authy02","Fawse");
-localStorage.setItem("punCode", "aXbb2cY");
-alert("Success! Great pun work, James!");
-window.location.href = "/spritz.html"
+
+    var punword = localStorage.getItem('punCode2');
+    var spouseword = localStorage.getItem('spouseCode');
+    var meadword = localStorage.getItem('meadCode');
+   
+        if (secretword === "4puns4u"){
+if (punword===null){
+    localStorage.setItem("spritzCount", "31");
+    localStorage.setItem("paypalue", "False");
+    sessionStorage.setItem("Authy01","Twue");
+    sessionStorage.setItem("Authy02","Fawse");
+    localStorage.setItem("punCode2", "jc014p");
+    alert("Success! Great pun work, James!");
+    window.location.href = "/spritz.html";
+} else if (punword==="jc014p") {refreshAccess(secretword);}
+
+        } else if (secretword === "SpousesBeSprayin") {
+if (spouseword===null) {
+    localStorage.setItem("spritzCount", "10");
+    localStorage.setItem("paypalue", "False");
+    sessionStorage.setItem("Authy01","Twue");
+    sessionStorage.setItem("Authy02","Fawse");
+    localStorage.setItem("spouseCode", "sscsm4f");
+    alert("Success! Rock on, Reeds");
+    window.location.href = "/spritz.html";
+} else if (spouseword==="sscsm4f") {refreshAccess(secretword);}
+
+        } else if (secretword === "ThanksMeader") {
+if (meadword===null){
+    localStorage.setItem("spritzCount", "2");
+    localStorage.setItem("paypalue", "False");
+    sessionStorage.setItem("Authy01","Twue");
+    sessionStorage.setItem("Authy02","Fawse");
+    localStorage.setItem("meadCode", "md014tg");
+    alert("Success! Thanks, Meader, for the generosity");
+    window.location.href = "/spritz.html";
+} else if (meadword==="md014tg") {refreshAccess(secretword);}
         } else { 
-            sessionStorage.setItem("Authy01", "Twue");
-            sessionStorage.setItem("Authy02", "Fawse");
-            alert("Code Already Redeemed. Access Code has been refreshed for the original redeemer.");
-            window.location.href = "/spritz.html";
+
+            alert("Nope, not a code. If it's not a typo and you're trying to STEAL SPRAYS?! Shame on you!");
+
         }
-    } else {
-
-alert("Nope, not a code. If it's not a typo and you're trying to STEAL SPRAYS?! Shame on you!");
-
-    }
-
-
-
-
 }
+
+
+function refreshAccess(whichCode) {
+    sessionStorage.setItem("Authy01", "Twue");
+            sessionStorage.setItem("Authy02", "Fawse");
+            alert("Code Already Redeemed. Access Code has been refreshed for the code: \"" + whichCode + "\"");
+            window.location.href = "/spritz.html";
+}
+
 </script>
 </head>
 <body class='w3-theme-l5'>
