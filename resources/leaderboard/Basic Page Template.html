@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mason Amadeus - Brain Feed</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="/DTTw3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis'>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://masonamadeus.com/all.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+
+<!-- WEB SOCKET LISTENER
+    <script>
+$(document).ready(function(){
+        // start up the SocketIO connection to the server
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+          
+socket.on('eventName', function(msg) {
+        
+        // what you want to happen on eventName
+        
+        });
+        
+});
+</script>
+
+-->
+
+
+</head>
+<body>
+ 
+<!-- Page Container -->
+<div id="pageContain" class="w3-container w3-content w3-center" style="max-width:1400px;margin-top:100px;">   
+
+<div id="notiParent">
+
+<div id="contestant1" class="contestant w3-padding-large">
+    <h2 id="cont1Name" class="w3-text-black marker-text over-centered">Red</h2>
+        <img id="cont1Av" src="/imgs/masonavatar.png" class="w3-circle w3-card-4 w3-border-red contestant">
+        <p id="score1" class="score w3-text-balck marker-text under-centered" style="font-size:50px;">0</p>
+</div>
+
+<div id="contestant2" class="w3-padding-large contestant">
+    <h2 id="cont2Name" class="w3-text-black marker-text over-centered">Blue</h2>
+        <img id="cont2Av" src="/imgs/masonavatar.png" class="w3-circle w3-card-4 w3-border-blue contestant">
+        <p id="score2" class="score w3-text-balck marker-text under-centered" style="font-size:50px;">0</p>
+</div>
+
+<div id="contestant3" class="w3-padding-large contestant">
+    <h2 id="cont3Name" class="w3-text-black marker-text over-centered">Yellow</h2>
+        <img id="cont3Av" src="/imgs/masonavatar.png" class="w3-circle w3-card-4 w3-border-yellow contestant">
+        <p id="score3" class="score w3-text-balck marker-text under-centered" style="font-size:50px;">0</p>
+</div>
+
+<div id="contestant4" class="w3-padding-large contestant">
+    <h2 id="cont4Name" class="w3-text-black marker-text over-centered">Purple</h2>
+        <img id="cont4Av" src="/imgs/masonavatar.png" class="w3-circle w3-card-4 w3-border-purple contestant">
+        <p id="score4" class="score w3-text-balck marker-text under-centered" style="font-size:50px;">0</p>
+</div>
+<script>
+
+// THANKS STACK OVERFLOW
+
+function animateSort(parent, child, sortAttribute) {
+  var promises = [];
+  var positions = [];
+  var originals = $(parent).find(child);
+  var sorted = originals.toArray().sort(function(a, b) {
+    if (parseInt($(a).find("p.score").html()) > parseInt($(b).find("p.score").html())) return 1;
+    if (parseInt($(a).find("p.score").html()) < parseInt($(b).find("p.score").html())) return -1;
+    return 0;
+  });
+
+  originals.each(function() {
+    //store original positions
+    positions.push($(this).position());
+  }).each(function(originalIndex) {
+    //change items to absolute position
+    var $this = $(this);
+    var newIndex = sorted.indexOf(this);
+    sorted[newIndex] = $this.clone(); //copy the original item before messing with its positioning
+    $this.css("position", "absolute").css("top", positions[originalIndex].top + "px").css("left", positions[originalIndex].left + "px");
+
+    //animate to the new position
+    var promise = $this.animate({
+      top: positions[newIndex].top + "px",
+      left: positions[newIndex].left + "px"
+    }, 1000);
+    promises.push(promise);
+  });
+
+  //instead of leaving the items out-of-order and positioned, replace them in sorted order
+  $.when.apply($, promises).done(function() {
+    originals.each(function(index) {
+      $(this).replaceWith(sorted[index]);
+    });
+  });
+}
+
+$(function() {
+  $("input").click(function() {
+    animateSort("#listing", "div", "data-value");
+  });
+});
+
+
+</script>
+</div>
+
+
+<!-- End Page Container -->
+</div>
+<div class="w3-bar w3-bottom w3-margin-bottom w3-padding">
+<div onclick="addPoints('score1', 1)" class="w3-bar-item w3-button w3-red"><i class="fas fa-plus-square"></i></div>
+<div onclick="addPoints('score2', 1)" class="w3-bar-item w3-button w3-blue"><i class="fas fa-plus-square"></i></div>
+<div onclick="addPoints('score3', 1)" class="w3-bar-item w3-button w3-yellow"><i class="fas fa-plus-square"></i></div>
+<div onclick="addPoints('score4', 1)" class="w3-bar-item w3-button w3-purple"><i class="fas fa-plus-square"></i></div>
+<div class="w3-bar-item"></div>
+<div onclick="animateSort('#notiParent', 'div', '' )" class="w3-bar-item w3-button w3-black"><i class="w3-large fas fa-sort-amount-up"></i></div>
+<input class="dropbtn w3-right w3-padding" id='reNamer'>
+
+<div class="w3-bar">
+<div onclick="addPoints('score1', -1)" class="w3-bar-item w3-button w3-red"><i class="fas fa-minus-square"></i></div>
+<div onclick="addPoints('score2', -1)" class="w3-bar-item w3-button w3-blue"><i class="fas fa-minus-square"></i></div>
+<div onclick="addPoints('score3', -1)" class="w3-bar-item w3-button w3-yellow"><i class="fas fa-minus-square"></i></div>
+<div onclick="addPoints('score4', -1)" class="w3-bar-item w3-button w3-purple"><i class="fas fa-minus-square"></i></div>
+<input id="avUpload" class="w3-bar-item w3-small" type="file">
+
+<div class="w3-right">
+    <i class="w3-bar-block fas fa-user-edit"></i>
+    <button onclick="renamer('cont1Name')" class="w3-bar-block w3-button w3-red"></button>
+    <button onclick="renamer('cont2Name')" class="w3-bar-block w3-button w3-blue"></button>
+    <button onclick="renamer('cont3Name')" class="w3-bar-block w3-button w3-yellow"></button>
+    <button onclick="renamer('cont4Name')" class="w3-bar-block w3-button w3-purple"></button>
+</div><br>
+<div class="w3-right">
+    <i class="w3-bar-block fas fa-file-image"></i>
+    <button onclick="avChanger('cont1Av')" class="w3-bar-block w3-button w3-red"></button>
+    <button onclick="avChanger('cont2Av')" class="w3-bar-block w3-button w3-blue"></button>
+    <button onclick="avChanger('cont3Av')" class="w3-bar-block w3-button w3-yellow"></button>
+    <button onclick="avChanger('cont4Av')" class="w3-bar-block w3-button w3-purple"></button>
+</div>
+</div>
+
+
+<script>
+    // points adder
+    function addPoints(color, amount){
+    var points = document.getElementById(color);
+    var scoring = parseInt(points.innerHTML) + amount;
+    points.innerHTML = scoring;
+    }    
+
+    function renamer(contId){
+var newName = document.getElementById('reNamer');
+var nameSlot = document.getElementById(contId);
+nameSlot.innerHTML = newName.value;
+    }
+
+    function avChanger(avId){
+var photoSlot = document.getElementById(avId);
+var AvIn = document.getElementById('avUpload');
+var newAv = AvIn.files[0];
+var url = window.URL.createObjectURL(newAv);
+photoSlot.src= url;
+    }
+
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function dropDowner() {
+  document.getElementById("dropMenu").classList.toggle("w3-show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("w3-dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('w3-show')) {
+        openDropdown.classList.remove('w3-show');
+      }
+    }
+  }
+}
+</script>
+</body>
+</html> 
