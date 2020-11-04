@@ -256,7 +256,7 @@ html {scroll-behavior: smooth;}
 .marker-text {font-family: 'Permanent Marker', cursive;
   font-size:40px;
   text-align:center;
-  text-shadow:10px 7px 13px rgba(255, 255, 255, 0.548),10px 7px 20px rgba(255, 255, 255, 0.322);
+  text-shadow:5px 7px 8px rgba(255, 255, 255, 0.548),8px 9px 10px rgba(255, 255, 255, 0.322);
   -webkit-text-stroke: 1px white;
 	-webkit-text-fill-color: black;}
 
