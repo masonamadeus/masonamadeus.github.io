@@ -37,7 +37,7 @@ socket.on('eventName', function(msg) {
 
 
 </head>
-<body>
+<body onload="fillScores(),animateSort('#notiParent', 'div', '' )">
  
 <!-- Page Container -->
 <div id="pageContain" class="w3-container w3-content w3-center" style="max-width:1400px;margin-top:100px;">   
@@ -46,26 +46,26 @@ socket.on('eventName', function(msg) {
 
 <div id="contestant1" class="contestant w3-padding-large">
     <h2 id="cont1Name" class="w3-text-black marker-text over-centered">Red</h2>
-        <img id="cont1Av" src="/resources/leaderboard/imgs/masonavatar.png" class="w3-circle w3-card-4 w3-border-red contestant">
-        <p id="score1" class="score w3-text-balck marker-text under-centered" style="font-size:50px;">0</p>
+        <img id="cont1Av" src="/resources/leaderboard/imgs/RedAv.png" class="w3-circle w3-card-4 w3-border-red contestant">
+        <p id="score1" class="score w3-text-balck marker-text under-centered" style="font-size:65px;">0</p>
 </div>
 
 <div id="contestant2" class="w3-padding-large contestant">
     <h2 id="cont2Name" class="w3-text-black marker-text over-centered">Blue</h2>
-        <img id="cont2Av" src="/resources/leaderboard/imgs/masonavatar.png" class="w3-circle w3-card-4 w3-border-blue contestant">
-        <p id="score2" class="score w3-text-balck marker-text under-centered" style="font-size:50px;">0</p>
+        <img id="cont2Av" src="/resources/leaderboard/imgs/BlueAv.png" class="w3-circle w3-card-4 w3-border-blue contestant">
+        <p id="score2" class="score w3-text-balck marker-text under-centered" style="font-size:65px;">0</p>
 </div>
 
 <div id="contestant3" class="w3-padding-large contestant">
     <h2 id="cont3Name" class="w3-text-black marker-text over-centered">Yellow</h2>
-        <img id="cont3Av" src="/resources/leaderboard/imgs/masonavatar.png" class="w3-circle w3-card-4 w3-border-yellow contestant">
-        <p id="score3" class="score w3-text-balck marker-text under-centered" style="font-size:50px;">0</p>
+        <img id="cont3Av" src="/resources/leaderboard/imgs/YellowAv.png" class="w3-circle w3-card-4 w3-border-yellow contestant">
+        <p id="score3" class="score w3-text-balck marker-text under-centered" style="font-size:65px;">0</p>
 </div>
 
 <div id="contestant4" class="w3-padding-large contestant">
     <h2 id="cont4Name" class="w3-text-black marker-text over-centered">Purple</h2>
-        <img id="cont4Av" src="/resources/leaderboard/imgs/masonavatar.png" class="w3-circle w3-card-4 w3-border-purple contestant">
-        <p id="score4" class="score w3-text-balck marker-text under-centered" style="font-size:50px;">0</p>
+        <img id="cont4Av" src="/resources/leaderboard/imgs/PurpleAv.png" class="w3-circle w3-card-4 w3-border-purple contestant">
+        <p id="score4" class="score w3-text-balck marker-text under-centered" style="font-size:65px;">0</p>
 </div>
 <script>
 
@@ -127,7 +127,7 @@ $(function() {
 <div onclick="addPoints('score4', 1)" class="w3-bar-item w3-button w3-purple"><i class="fas fa-plus-square"></i></div>
 <div class="w3-bar-item"></div>
 <div onclick="animateSort('#notiParent', 'div', '' )" class="w3-bar-item w3-button w3-black w3-xxlarge"><i class="w3-xxlarge fas fa-sort-amount-up"></i></div>
-<input class="dropbtn w3-right w3-padding" id='reNamer'>
+<input class="dropbtn w3-right w3-padding" id='reNamer' placeholder='Rename Contestants'>
 
 <div class="w3-bar">
 <div onclick="addPoints('score1', -1)" class="w3-bar-item w3-button w3-red"><i class="fas fa-minus-square"></i></div>
@@ -154,18 +154,91 @@ $(function() {
 
 
 <script>
+    function fillScores(){
+      var player1 = document.getElementById('score1');
+      var player2 = document.getElementById('score2');      
+      var player3 = document.getElementById('score3');
+      var player4 = document.getElementById('score4');
+
+      var score1 = localStorage.getItem('score1');
+      var score2 = localStorage.getItem('score2');
+      var score3 = localStorage.getItem('score3');
+      var score4 = localStorage.getItem('score4');
+
+      var contNameSlot1 = document.getElementById('cont1Name');
+      var contNameSlot2 = document.getElementById('cont2Name');
+      var contNameSlot3 = document.getElementById('cont3Name');      
+      var contNameSlot4 = document.getElementById('cont4Name');
+
+      var savedName1 = localStorage.getItem('cont1Name');
+      var savedName2 = localStorage.getItem('cont2Name');
+      var savedName3 = localStorage.getItem('cont3Name');
+      var savedName4 = localStorage.getItem('cont4Name');
+
+ if (score1!==null) {
+      player1.innerHTML = score1;
+    } else {
+      player1.innerHTML = "0";
+    }
+ 
+    if (score2!==null) {
+      player2.innerHTML = score2;
+    } else {
+      player2.innerHTML = "0";
+    }
+
+    if (score3!==null) {
+      player3.innerHTML = score3;
+    } else {
+      player3.innerHTML = "0";
+    }
+
+    if (score4!==null) {
+      player4.innerHTML = score4;
+    } else {
+      player4.innerHTML = "0";
+    }
+  if (savedName1!==null) {
+      contNameSlot1.innerHTML = savedName1
+  } else {
+      contNameSlot1.innerHTML = "Red" 
+  }
+  if (savedName2!==null) {
+      contNameSlot2.innerHTML = savedName2
+  } else {
+      contNameSlot2.innerHTML = "Blue" 
+  }
+  if (savedName3!==null) {
+      contNameSlot3.innerHTML = savedName3
+  } else {
+      contNameSlot3.innerHTML = "Yellow" 
+  }
+  if (savedName4!==null) {
+      contNameSlot4.innerHTML = savedName4
+  } else {
+      contNameSlot4.innerHTML = "Purple" 
+  }
+}
     // points adder
     function addPoints(color, amount){
     var points = document.getElementById(color);
     var scoring = parseInt(points.innerHTML) + amount;
+    var storePoints = toString(points.innerHTML);
+    var storeID = toString(color)
     points.innerHTML = scoring;
+    localStorage.setItem(color, points.innerHTML)
     }    
+
+// re-namer
 
     function renamer(contId){
 var newName = document.getElementById('reNamer');
 var nameSlot = document.getElementById(contId);
 nameSlot.innerHTML = newName.value;
+localStorage.setItem(contId, nameSlot.innerHTML)
     }
+
+// avatar changer
 
     function avChanger(avId){
 var photoSlot = document.getElementById(avId);

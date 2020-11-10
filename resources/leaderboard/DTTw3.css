@@ -237,10 +237,12 @@ html {scroll-behavior: smooth;}
 
 .container {position:relative;}
 .over-centered {
-    position: relative;
+    position: absolute;
     top: 0%;
     left: 50%;
-    transform: translate(-50%, 70%);
+    transform: translate(-50%, -45%);
+    flex: auto;
+    overflow: visible
   }
   
 .under-centered{
@@ -254,7 +256,7 @@ html {scroll-behavior: smooth;}
 
 
 .marker-text {font-family: 'Permanent Marker', cursive;
-  font-size:40px;
+  font-size:45px;
   text-align:center;
   text-shadow:5px 7px 8px rgba(255, 255, 255, 0.548),8px 9px 10px rgba(255, 255, 255, 0.322);
   -webkit-text-stroke: 1px white;
@@ -332,9 +334,9 @@ img.contestant{
 div.contestant{
   display:inline-block;
   text-align:center;
-  overflow:hidden;
-
-position:relative;
+  overflow:visible;
+  position:relative;
+  width: 260px
 
 }
 
