@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loading...</title>
+<script>
+    window.onload = function(){
+        var hanCredit = localStorage.getItem('hanaCreds')
+        var hanCredInt = parseInt(hanCredit)
+        var spraid = (hanCredInt+6);
+
+if (hanCredInt != hanCredInt) {
+    localStorage.setItem('hanaCreds', '6');
+} else {
+    localStorage.setItem("hanaCreds", spraid.toString());
+}
+window.location.replace('/stream.html');
+    }
+</script>
+</head>
+<body>
+    Loading...
+</body>
+</html>

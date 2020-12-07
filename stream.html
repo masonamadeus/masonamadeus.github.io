@@ -103,8 +103,9 @@ client.send();
  <div class="w3-border w3-round">
 
   <div class="w3-padding-large">
-    <input id="sprayMsg" class="w3-padding-large w3-card w3-round w3-center" type="text" maxlength="40" size=40 placeholder="Your Name Here">
-    <p class="w3-large"><b>Tell the streamers who to thank!</b></p>
+    <p>Tell the streamers who to thank:</p>
+    <input id="sprayMsg" class="w3-padding-large w3-card w3-round w3-center" type="text" maxlength="40" placeholder="Type Your Name Here">
+    <p class="w3-large"><b>Click a button, make it happen!</b></p>
   </div>
 
 <!-- Mason -->
@@ -172,11 +173,56 @@ client.send();
 
 </div>
   <!-- access code bar -->
-      <input id="accessCodeSpace" style="display:none;" type="text"><br>
-<hr>
+      <input id="accessCodeSpace" style="display:none;" type="text">
+
     <p id="donations" class="w3-xxlarge w3-margin-bottom"><strong>Donate $5 - get 6 Credits!</strong></p>
     <div class="w3-padding-large"></div>
+    <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+<hr>
+<div class="w3-center"><p><em>
+  All payments are secure, and fully handled by PayPal; not my code.<br>
+  Your payment here is considered a donation, but I don't think it is tax deductible because we're an LLC.<br>
+  If something goes wrong, reach out and let me know:<br>
+  Problems@MasonAmadeus.com</em></p>
+</div>
+  <script src="https://www.paypal.com/sdk/js?client-id=AclPC7dRMKR7c4LVelqgbWf94_KxafbTa7O-y31JrokcGoxbPIFOgrxctZfese4t7-c_PeDJzXmGrth7&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'pill',
+          color: 'black',
+          layout: 'vertical',
+          label: 'buynow',
+          
+        },
 
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"6 Stream Credits","amount":{"currency_code":"USD","value":5}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            window.alert('Transaction completed by ' + details.payer.name.given_name + '!');
+            window.location.replace('/images/hhd1.html');
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+
+    
 
 <script>
 
