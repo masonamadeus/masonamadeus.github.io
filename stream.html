@@ -86,7 +86,7 @@ client.send();
 
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;">
-  <div class="w3-hide-small w3-hide-medium w3-yellow w3-center"><p><i><b>Scroll down to see the interactive options!</b></i></p></div>
+  <div class="w3-hide-small w3-hide-medium w3-orange w3-center"><p><i><b>Scroll down to see the interactive options!</b></i></p></div>
 
 
 <div class="twitch">
@@ -98,18 +98,20 @@ client.send();
 
   
 <div class="w3-col w3-center w3-margin-top">
- <p><a class="w3-xxlarge">You have <strong id="credCounter"></strong> credits!</a><br>
- <a href="#donations">Get Credits</a></p>
- <div class="w3-border w3-round">
 
-  <div class="w3-padding-large">
-    <p>Tell the streamers who to thank:</p>
-    <input id="sprayMsg" class="w3-padding-large w3-card w3-round w3-center" type="text" maxlength="40" placeholder="Type Your Name Here">
-  </div>
-  <p class="w3-large"><strong>Then pick a button!</strong></p>
+ <div id="tokenCounter" class="w3-border w3-round-xxlarge w3-card w3-theme-l1 changer">
+    <div class="w3-amber w3-round w3-padding-large w3-card-2 w3-left" style="display: inline-block">
+ <p><a class="w3-xxlarge">You have <strong class="w3-animate-input changer" id="credCounter"></strong> credits!</a><br>
+ <a href="#donations">Get Credits</a></p>
+ <div class="" style="display: inline-block;">
+  <hr>
+  <p>Tell the streamers who to thank:</p>
+  <input id="sprayMsg" class="w3-padding-large w3-round w3-center" type="text" maxlength="40" placeholder="Type Your Name Here">
+</div>
+ </div>
 
 <!-- Morgan -->
-<div class="w3-card w3-round w3-theme-d1 w3-padding-large w3-margin" style="display:inline-block">
+<div class="w3-card w3-round-large w3-blue w3-padding-large w3-margin" style="display:inline-block">
   <strong class="w3-xlarge">Morgan:</strong><br>
   <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('morgan','book')">
     <strong>Book On</strong><br>
@@ -126,7 +128,7 @@ client.send();
 <!-- End Morgan -->
 
 <!-- Mason -->
-  <div class="w3-card w3-round w3-theme-l1 w3-padding-large w3-margin" style="display:inline-block">
+  <div class="w3-card w3-round-large w3-red w3-padding-large w3-margin" style="display:inline-block">
     <strong class="w3-xlarge">Mason:</strong><br>
   <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('mason','spritz')">
     <strong>Spray Face</strong><br>
@@ -137,7 +139,7 @@ client.send();
 <!-- End Mason -->
 
 <!-- Colin -->
-<div class="w3-card w3-round w3-theme-l3 w3-padding-large w3-margin" style="display:inline-block">
+<div class="w3-card w3-round-large w3-purple w3-padding-large w3-margin" style="display:inline-block">
   <strong class="w3-xlarge">Colin:</strong><br>
    <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('colin','blind')">
     <strong>60 Seconds</strong><br>
@@ -154,7 +156,7 @@ client.send();
 <!-- End Colin -->
 
 <!-- Tracy -->
-<div class="w3-card w3-round w3-theme-d3 w3-padding-large w3-margin" style="display:inline-block">
+<div class="w3-card w3-round-large w3-green w3-padding-large w3-margin" style="display:inline-block">
     <strong class="w3-xlarge">Tracy:</strong><br>
   <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('tracy','hand')">
     <strong>Use Only</strong><br>
@@ -169,19 +171,27 @@ client.send();
   </div>
 </div>
 <!-- End Tracy-->
-
+<div class="w3-padding"></div>
 
 </div>
   <!-- access code bar -->
       <input id="accessCodeSpace" style="display:none;" type="text">
-
-    <p id="donations" class="w3-xxlarge w3-margin-bottom"><strong>Donate $5 - get 6 Credits!</strong></p>
-    <div class="w3-padding-large"></div>
-    <div id="smart-button-container">
+      <div class="w3-padding-large"></div>
+<div class="w3-round-xlarge w3-margin w3-theme-d1 w3-card w3-center">
+  <div class="w3-xxlarge">
+<strong id="donations">Donate and Get Credits!</strong>
+    </div>
+    <div id="smart-button-container" class="w3-xlarge">
       <div style="text-align: center;">
-        <div id="paypal-button-container"></div>
+        <div style="margin-bottom: 1.5rem;">
+          <p>Choose A Credit Pack:</p>
+          <select id="item-options" class="w3-card w3-round"><option value="6 Credits" price="5">$5.00 - 6 Credits</option><option value="1 Credit" price="1.00">$1.00 - 1 Credit</option><option value="15 Credits" price="10">$10.00 - 14 Credits</option><option value="500 Credits" price="100">$100.00 - 500 Credits</option></select>
+          <select style="visibility: hidden" id="quantitySelect"></select>
+        </div>
+      <div id="paypal-button-container"></div>
       </div>
     </div>
+</div>
 <hr>
 <div class="w3-center"><p><em>
   All payments are secure, and fully handled by PayPal; not my code.<br>
@@ -189,39 +199,112 @@ client.send();
   If something goes wrong, reach out and let me know:<br>
   Problems@MasonAmadeus.com</em></p>
 </div>
-  <script src="https://www.paypal.com/sdk/js?client-id=AclPC7dRMKR7c4LVelqgbWf94_KxafbTa7O-y31JrokcGoxbPIFOgrxctZfese4t7-c_PeDJzXmGrth7&currency=USD" data-sdk-integration-source="button-factory"></script>
-  <script>
-    function initPayPalButton() {
-      paypal.Buttons({
-        style: {
-          shape: 'pill',
-          color: 'black',
-          layout: 'vertical',
-          label: 'buynow',
-          
-        },
 
-        createOrder: function(data, actions) {
-          return actions.order.create({
-            purchase_units: [{"description":"6 Stream Credits","amount":{"currency_code":"USD","value":5}}]
-          });
-        },
-
-        onApprove: function(data, actions) {
-          return actions.order.capture().then(function(details) {
-            window.alert('Transaction completed by ' + details.payer.name.given_name + '!');
-            window.location.replace('/images/hhd1.html');
-          });
-        },
-
-        onError: function(err) {
-          console.log(err);
-        }
-      }).render('#paypal-button-container');
+<script src="https://www.paypal.com/sdk/js?client-id=AURFq7w5OfTo5c9YndZqrOgTU-SsmLvyCwvTC9ZWlRvq5mFDg5wSNHEVOhGewulErGUlv3T9BwednDsm&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script>
+  function initPayPalButton() {
+    var shipping = 0;
+    var itemOptions = document.querySelector("#smart-button-container #item-options");
+var quantity = parseInt();
+var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+if (!isNaN(quantity)) {
+  quantitySelect.style.visibility = "visible";
+}
+var orderDescription = 'Stream Credits';
+if(orderDescription === '') {
+  orderDescription = 'Item';
+}
+paypal.Buttons({
+  style: {
+    shape: 'pill',
+    color: 'gold',
+    layout: 'vertical',
+    label: 'paypal',
+    
+  },
+  createOrder: function(data, actions) {
+    var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+    var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+    var tax = (0 === 0) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+    if(quantitySelect.options.length > 0) {
+      quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+    } else {
+      quantity = 1;
     }
-    initPayPalButton();
-  </script>
 
+    tax *= quantity;
+    tax = Math.round(tax * 100) / 100;
+    var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+    priceTotal = Math.round(priceTotal * 100) / 100;
+    var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+    return actions.order.create({
+      purchase_units: [{
+        description: orderDescription,
+        amount: {
+          currency_code: 'USD',
+          value: priceTotal,
+          breakdown: {
+            item_total: {
+              currency_code: 'USD',
+              value: itemTotalValue,
+            },
+            shipping: {
+              currency_code: 'USD',
+              value: shipping,
+            },
+            tax_total: {
+              currency_code: 'USD',
+              value: tax,
+            }
+          }
+        },
+        items: [{
+          name: selectedItemDescription,
+          unit_amount: {
+            currency_code: 'USD',
+            value: selectedItemPrice,
+          },
+          quantity: quantity
+        }]
+      }]
+    });
+
+  },
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(details) {
+      alert('Transaction completed by ' + details.payer.name.given_name + '!');
+      console.log(details);
+      var oldCredits = localStorage.getItem('hanaCreds');
+      var credits = details.purchase_units[0].amount.value;
+      var oldCredINT = parseInt(oldCredits);
+      var credINT = parseInt(credits);
+      var credMath = ((credINT ** 2)*0.04) + credINT;
+      var credOut = credMath + oldCredINT
+
+   if (oldCredINT != oldCredINT) {
+    localStorage.setItem('hanaCreds', credMath);
+   } else {
+    localStorage.setItem('hanaCreds', credOut)
+   }
+    var counterSpace = document.getElementById('credCounter');
+    counterSpace.innerHTML = localStorage.hanaCreds;
+    counterSpace.classList.add('highlight');
+    setTimeout(function(){counterSpace.classList.remove('highlight')}, 1000);
+
+
+
+  }
+    
+    );
+  },
+  onError: function(err) {
+    console.log(err);
+  },
+}).render('#paypal-button-container');
+}
+initPayPalButton();
+
+</script>
     
 
 <script>
@@ -256,9 +339,17 @@ function faceSpray(destination,effect) {
       }));
 }
     var spraid = (parseInt(localStorage.getItem('hanaCreds'))-1);
+    var counterSpace = document.getElementById('credCounter');
+    var tokenSpace = document.getElementById('tokenCounter');
     localStorage.setItem("hanaCreds", spraid.toString());
     console.log(localStorage.getItem("hanaCreds"));
-    document.getElementById('credCounter').innerHTML = localStorage.hanaCreds
+    counterSpace.innerHTML = localStorage.hanaCreds;
+    tokenSpace.classList.remove('w3-theme-l1');
+    tokenSpace.classList.add('highlight2');
+    counterSpace.classList.add('highlight');
+    setTimeout(function(){counterSpace.classList.remove('highlight')}, 1500);
+    setTimeout(function(){tokenSpace.classList.remove('highlight2');tokenSpace.classList.add('w3-theme-l1')}, 200);
+
     }
   else {
 window.alert('You need to purchase Credits!');

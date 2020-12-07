@@ -235,3 +235,24 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 /* Parts Mason has fucked with */
 
 html {scroll-behavior: smooth;}
+
+.changer {
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    color: black;
+  }
+  
+  .highlight {
+    color: #ffffff;
+  }
+
+  .highlight2 {
+      background-color: #ffc107;
+  }
+
+  select {
+    display: block;
+    margin: 0 auto;
+    }
