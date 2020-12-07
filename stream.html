@@ -329,13 +329,13 @@ function faceSpray(destination,effect) {
 
       if (value !== ""){
       xhr.send(JSON.stringify({
-    name: sanitizeString(value), effect: effect
+    msg: sanitizeString(value), effect: effect
 }));
 
 } else {
 
       xhr.send(JSON.stringify({
-        name: defVal, effect: effect
+        msg: defVal, effect: effect
       }));
 }
     var spraid = (parseInt(localStorage.getItem('hanaCreds'))-1);

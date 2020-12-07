@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mason Amadeus - Brain Feed</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="/static/w32.css">
+<link rel="stylesheet" href="/static/w3-theme-blue-grey.css">
+<link href="/static/css2.css" rel="stylesheet">
+<link rel="stylesheet" href="https://masonamadeus.com/all.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+</head>
+<body class="">
+
+<div class="w3-large" style="color: dodgerblue;max-width: 250px;min-height: 250px;border-style: solid;border-width: 1px;">
+
+<div id="mirror" class="fade-out" style="float:right;"><i class="fas fa-backward fa-4x"></i></div>
+<div id="book" class="fade-out" style="float:right;"><i class="w3-xxlarge fas fa-book fa-4x"></i></div>
+
+</div>
+
+<!-- Alert Container -->
+<div id="notiParent" class="w3-container w3-content w3-center" style="max-width:1400px;margin-top:100px">   
+
+</div>
+
+
+<!--
+<div class="w3-button w3-xxlarge w3-padding-large" onclick="testAlert('This isin text!!')"> Test Alert
+</div> -->
+
+
+
+<script>
+$(document).ready(function(){
+// start up the SocketIO connection to the server
+    var socket = io.connect('http://' + document.domain + ':' + location.port);
+// incrementing ID variables to keep the page from getting too large
+    var alrtCount = 0
+    var alrtMax = 0
+  
+  socket.on('morganNotif', function(msg) {
+        var lastAlert = document.getElementById('actAlrt');
+        var p = document.getElementById('notiParent');      
+        var alertBox = document.createElement("div");
+        var styling = 'bigfont w3-button w3-card-2 w3-round w3-theme-l5 w3-margin w3-padding-large';
+        var entrAnim = ' w3-animate-bottom';
+        var exitAnim = ' fade-out';
+        var action = msg['effect'];
+
+
+if (action = "book") {
+
+
+}
+if (action = "mirror") {
+
+
+}
+
+        alertBox.setAttribute('id', 'actAlrt' + (alrtCount++));
+        alertBox.setAttribute('class', styling+entrAnim);
+        alertBox.innerHTML = "<strong class='w3-xxlarge'><i class='w3-xxlarge fas fa-shower'></i>&emsp;" + msg['value'] + "</strong>";
+        p.prepend(alertBox);
+        setTimeout(function(){
+          alertBox.setAttribute('class', styling+exitAnim)
+        }, 3000);
+    if (alrtCount > 10){
+var cullAlert = document.getElementById('actAlrt'+(alrtMax++))
+cullAlert.parentNode.removeChild(cullAlert)
+    }
+    
+    });
+
+});
+</script>
+
+</body>
+</html> 
