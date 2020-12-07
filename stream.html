@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mason Amadeus - Brain Feed</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="/all.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+
+.twitch .twitch-video {
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.twitch .twitch-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.twitch .twitch-chat {
+  height: 400px;
+}
+
+.twitch .twitch-chat iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 850px) {
+  .twitch {
+    position: relative;
+  }
+  
+  .twitch .twitch-video {
+    width: 75%;
+    padding-top: 42.1875%;
+  }
+
+  .twitch .twitch-chat {
+    width: 25%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+</style>
+
+<script>
+window.onload = function() {
+
+  if(localStorage.getItem("hanaCreds")===null) {
+ 
+   document.getElementById('credCounter').innerHTML = "not purchased"
+   
+    } else {
+
+      document.getElementById('credCounter').innerHTML = localStorage.hanaCreds
+
+  }
+
+var client = new XMLHttpRequest();
+client.open('GET', '/hanaka.txt');
+client.onreadystatechange = function() {
+  document.getElementById("accessCodeSpace").value = client.responseText;
+}
+client.send();
+}
+
+
+</script>
+
+</head>
+
+
+<body class="w3-theme-l5">
+  
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;">
+  <div class="w3-hide-small w3-hide-medium w3-yellow w3-center"><p><i><b>Scroll down to see the interactive options!</b></i></p></div>
+
+
+<div class="twitch">
+<div class="twitch-video" id="scavTwitV"></div>
+<div class="twitch-chat" id="scavTwitC"><iframe
+  scrolling="yes"
+  src="https://www.twitch.tv/embed/thescavengersnetwork/chat?parent=masonamadeus.com"></iframe></div>
+</div>
+
+  
+<div class="w3-col w3-center w3-margin-top">
+ <p><a class="w3-xxlarge">You have <strong id="credCounter"></strong> credits!</a><br>
+ <a href="#donations">Get Credits</a></p>
+ <div class="w3-border w3-round">
+
+  <div class="w3-padding-large">
+    <input id="sprayMsg" class="w3-padding-large w3-card w3-round w3-center" type="text" maxlength="40" size=40 placeholder="Your Name Here">
+    <p class="w3-large"><b>Tell the streamers who to thank!</b></p>
+  </div>
+
+<!-- Mason -->
+  <div class="w3-card w3-round w3-theme-l1 w3-padding-large w3-margin" style="display:inline-block">
+    <strong class="w3-xlarge">Mason:</strong><br>
+  <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('mason','spritz')">
+    <strong>Spray Face</strong><br>
+    <i class="w3-xxlarge fas fa-shower"></i><br>
+    <strong>With Water</strong>
+  </div>
+</div>
+<!-- End Mason -->
+
+<!-- Colin -->
+<div class="w3-card w3-round w3-theme-l3 w3-padding-large w3-margin" style="display:inline-block">
+  <strong class="w3-xlarge">Colin:</strong><br>
+   <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('colin','blind')">
+    <strong>60 Seconds</strong><br>
+    <i class="w3-xxlarge fas fa-eye-slash"></i><br>
+    <strong>Blindfolded</strong>
+  </div>
+
+  <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('colin','spicy')">
+    <strong>Ghost Pepper</strong><br>
+    <i class="w3-xxlarge fas fa-fire-alt"></i><br>
+    <strong>Chips NOW</strong>
+  </div>
+</div>
+<!-- End Colin -->
+
+<!-- Morgan -->
+<div class="w3-card w3-round w3-theme-d1 w3-padding-large w3-margin" style="display:inline-block">
+  <strong class="w3-xlarge">Morgan:</strong><br>
+  <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('morgan','book')">
+    <strong>Book On</strong><br>
+    <i class="w3-xxlarge fas fa-book"></i><br>
+    <strong>Head</strong>
+  </div>
+
+  <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('morgan','mirror')">
+    <strong>Play for 60s</strong><br>
+    <i class="w3-xxlarge fas fa-backward"></i><br>
+    <strong>Mirrored</strong>
+  </div>
+  </div>
+<!-- End Morgan -->
+
+<!-- Tracy -->
+<div class="w3-card w3-round w3-theme-d3 w3-padding-large w3-margin" style="display:inline-block">
+    <strong class="w3-xlarge">Tracy:</strong><br>
+  <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('tracy','hand')">
+    <strong>Use Only</strong><br>
+    <i class="w3-xxlarge fas fa-hand-paper"></i><br>
+    <strong>One Hand</strong>
+  </div>
+
+  <div class="w3-card w3-round w3-white w3-button w3-large w3-margin-top" onclick="faceSpray('tracy','ask')">
+    <strong>Speak Only</strong><br>
+    <i class="w3-xxlarge fas fa-question"></i><br>
+    <strong>Questions</strong>
+  </div>
+</div>
+<!-- End Tracy-->
+
+
+</div>
+  <!-- access code bar -->
+      <input id="accessCodeSpace" style="display:none;" type="text"><br>
+<hr>
+    <p id="donations" class="w3-xxlarge w3-margin-bottom"><strong>Donate $5 - get 6 Credits!</strong></p>
+    <div class="w3-padding-large"></div>
+
+
+<script>
+
+
+function sanitizeString(str){
+    str = str.replace(/[^a-z0-9áéíóúñü \.,_-]/gim,"");
+    return str.trim();
+}
+
+function faceSpray(destination,effect) {
+      var currentSprays = parseInt(localStorage.getItem('hanaCreds'))
+      var sprayMax = 1
+  if (currentSprays >= sprayMax) {
+      var xhr = new XMLHttpRequest();
+      var value = document.getElementById("sprayMsg").value;
+      var defVal = "from Anonymous";
+      var access = document.getElementById('accessCodeSpace').value;
+      var address = access + "/" + destination
+      xhr.open("POST", address, true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      if (value !== ""){
+      xhr.send(JSON.stringify({
+    name: sanitizeString(value), effect: effect
+}));
+
+} else {
+
+      xhr.send(JSON.stringify({
+        name: defVal, effect: effect
+      }));
+}
+    var spraid = (parseInt(localStorage.getItem('hanaCreds'))-1);
+    localStorage.setItem("hanaCreds", spraid.toString());
+    console.log(localStorage.getItem("hanaCreds"));
+    document.getElementById('credCounter').innerHTML = localStorage.hanaCreds
+    }
+  else {
+window.alert('You need to purchase Credits!');
+    }
+}
+</script>
+<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+<script type="text/javascript">
+  var options = {
+    channel: "thescavengersnetwork",
+  };
+  var player = new Twitch.Player("scavTwitV", options);
+  player.setVolume(0.5);
+</script>
+</body>
+</html> 
