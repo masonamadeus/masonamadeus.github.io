@@ -17,22 +17,10 @@ html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </head>
 <body class="">
 
-<div class="w3-large" style="color: dodgerblue;max-width: 250px;min-height: 250px;border-style: solid;border-width: 1px;">
-
-<div id="mirror" class="fade-out" style="float:right;"><i class="fas fa-backward fa-4x"></i></div>
-<div id="book" class="fade-out" style="float:right;"><i class="w3-xxlarge fas fa-book fa-4x"></i></div>
-
-</div>
-
 <!-- Alert Container -->
 <div id="notiParent" class="w3-container w3-content w3-center" style="max-width:1400px;margin-top:100px">   
 
 </div>
-
-
-<!--
-<div class="w3-button w3-xxlarge w3-padding-large" onclick="testAlert('This isin text!!')"> Test Alert
-</div> -->
 
 
 
@@ -48,31 +36,30 @@ $(document).ready(function(){
         var lastAlert = document.getElementById('actAlrt');
         var p = document.getElementById('notiParent');      
         var alertBox = document.createElement("div");
-        var styling = 'bigfont w3-button w3-card-2 w3-round w3-theme-l5 w3-margin w3-padding-large';
-        var entrAnim = ' w3-animate-bottom';
+        var styling = 'bigfont displayblock w3-card-2 w3-circle w3-theme-l5 w3-margin w3-padding-large';
+        var entrAnim = ' w3-animate-zoom';
         var exitAnim = ' fade-out';
         var action = msg['effect'];
-
+        var icon = '';
 
 if (action = "book") {
+    icon = 'fas fa-book'
+};
 
-
-}
 if (action = "mirror") {
-
-
-}
+    icon = 'fas fa-backward'
+};
 
         alertBox.setAttribute('id', 'actAlrt' + (alrtCount++));
         alertBox.setAttribute('class', styling+entrAnim);
-        alertBox.innerHTML = "<strong class='w3-xxlarge'><i class='w3-xxlarge fas fa-shower'></i>&emsp;" + msg['value'] + "</strong>";
+        alertBox.innerHTML = "<strong class='w3-xxlarge'><i class=" + icon + "></i></strong>";
         p.prepend(alertBox);
         setTimeout(function(){
           alertBox.setAttribute('class', styling+exitAnim)
-        }, 3000);
-    if (alrtCount > 10){
-var cullAlert = document.getElementById('actAlrt'+(alrtMax++))
-cullAlert.parentNode.removeChild(cullAlert)
+        }, 60000);
+    if (alrtCount > 5){
+var cullAlert = document.getElementById('actAlrt'+(alrtMax++));
+cullAlert.parentNode.removeChild(cullAlert);
     }
     
     });

@@ -290,3 +290,7 @@ html {scroll-behavior: smooth;}
 .bigfont {
     font-family: 'Nunito', sans-serif;
 }
+
+.displayblock {
+  display: inline-block;
+}

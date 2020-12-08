@@ -20,6 +20,11 @@ if __name__ == "__main__":
     profanity.load_censor_words()
 
 SPRAY_Q = 0
+
+@app.route('/notify')
+def notify():
+    return render_template('notif.html')
+
 @app.route('/morgan', methods=['GET'])
 def mason():
     return render_template('morgan.html')
@@ -80,7 +85,7 @@ def respond():
     req = request.get_json()
     value = req['msg']
     censored_value = profanity.censor(value)
-    socketio.emit('overlayNotif', {'value': censored_value})
+    socketio.emit('masonNotif', {'value': censored_value})
     print('hit success');
     return Response(status=200)
 
