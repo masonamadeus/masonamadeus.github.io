@@ -291,6 +291,12 @@ paypal.Buttons({
     counterSpace.classList.add('highlight');
     setTimeout(function(){counterSpace.classList.remove('highlight')}, 1000);
 
+    var xhi = new XMLHttpRequest();
+    var access = document.getElementById('accessCodeSpace').value;
+    var address = access + "/" + "notify"
+    xhi.open("POST", address, true);
+    xhi.setRequestHeader('Content-Type', 'application/json');
+    xhi.send(JSON.stringify({counter: credits}));
 
 
   }
@@ -321,7 +327,7 @@ function faceSpray(destination,effect) {
   if (currentSprays >= sprayMax) {
       var xhr = new XMLHttpRequest();
       var value = document.getElementById("sprayMsg").value;
-      var defVal = "from Anonymous";
+      var defVal = "Anonymous";
       var access = document.getElementById('accessCodeSpace').value;
       var address = access + "/" + destination
       xhr.open("POST", address, true);
