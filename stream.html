@@ -321,7 +321,7 @@ function faceSpray(destination,effect) {
   if (currentSprays >= sprayMax) {
       var xhr = new XMLHttpRequest();
       var value = document.getElementById("sprayMsg").value;
-      var defVal = "from Anonymous";
+      var defVal = "Anonymous";
       var access = document.getElementById('accessCodeSpace').value;
       var address = access + "/" + destination
       xhr.open("POST", address, true);
