@@ -10,7 +10,7 @@ function resetTotal(){
     var xhi = new XMLHttpRequest();
     var access = "https://385ae2136771.ngrok.io/notify";
     var address = "https://385ae2136771.ngrok.io/notify"
-    var credits = '0'
+    var credits = '-110'
     xhi.open("POST", address, true);
     xhi.setRequestHeader('Content-Type', 'application/json');
     xhi.send(JSON.stringify({counter: credits}));
