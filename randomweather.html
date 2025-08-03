@@ -293,9 +293,6 @@
                     // Get data with fallbacks
                     const iconUrl = dayPeriod.icon;
                     const popDay = dayPeriod.probabilityOfPrecipitation?.value || 'N/A';
-                    const humidityDay = dayPeriod.relativeHumidity?.value || 'N/A';
-                    // Check if nightPeriod and its properties exist before trying to access them
-                    const humidityNight = (nightPeriod && nightPeriod.relativeHumidity?.value) || 'N/A';
 
                     // Inner HTML content with icon on the left and text on the right
                     card.innerHTML = `
@@ -317,12 +314,7 @@
                             <p class="forecast-info">
                                 <strong>Wind:</strong> ${dayPeriod.windSpeed} ${dayPeriod.windDirection}
                             </p>
-                            <p class="forecast-info">
-                                <strong>Day Humidity:</strong> ${humidityDay}%
-                            </p>
-                            <p class="forecast-info">
-                                <strong>Night Humidity:</strong> ${humidityNight}%
-                            </p>
+                            
                             
                         </div>
                     `;
