@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Day Weather Forecast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        @media (min-width: 768px) {
+            .container {
+                padding: 3rem;
+            }
+        }
+        .text-4xl { font-size: 2.25rem; }
+        .font-bold { font-weight: 700; }
+        .text-center { text-align: center; }
+        .text-gray-800 { color: #1f2937; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-gray-600 { color: #4b5563; }
+        .mb-8 { margin-bottom: 2rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-gray-500 { color: #6b7280; }
+        .font-medium { font-weight: 500; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .mb-4 { margin-bottom: 1rem; }
+        .animate-spin { animation: spin 1s linear infinite; }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .hidden { display: none; }
+        .weather-container {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .weather-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (min-width: 1024px) {
+            .weather-container {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+        .weather-card {
+            background-color: #f9fafb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .weather-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        .temp-display {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .temp-value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        .temp-unit {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #6b7280;
+        }
+        .forecast-info {
+            font-size: 0.875rem;
+            color: #4b5563;
+            margin-bottom: 0.25rem;
+        }
+        .error-message {
+            background-color: #fee2e2;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 2rem;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+        }
+        .temp-pair {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        .temp-high {
+            color: #d9534f;
+        }
+        .temp-low {
+            color: #428bca;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">10-Day Forecast</h1>
+        <h2 id="location-display" class="text-xl text-center text-gray-600 mb-8"></h2>
+
+        <div id="loading" class="text-center text-xl text-gray-500 font-medium">
+            <svg class="animate-spin mx-auto mb-4" width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Fetching weather data...
+        </div>
+
+        <div id="weather-container" class="weather-container">
+            <!-- Weather cards will be injected here by JavaScript -->
+        </div>
+
+        <div id="error-message" class="hidden error-message">
+            <p>An error occurred. Retrying shortly...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Wait for the DOM to be fully loaded before running the script.
+            
+            const weatherContainer = document.getElementById('weather-container');
+            const loadingIndicator = document.getElementById('loading');
+            const errorMessage = document.getElementById('error-message');
+            const locationDisplay = document.getElementById('location-display');
+
+            /**
+             * Generates a random latitude and longitude for the contiguous United States.
+             * The coordinates are bounded by:
+             * Latitude: 24.52° N to 49.38° N
+             * Longitude: -124.77° W to -66.95° W
+             * @returns {{latitude: number, longitude: number}}
+             */
+            function getRandomUsCoordinates() {
+                const minLat = 24.52;
+                const maxLat = 49.38;
+                const minLon = -124.77;
+                const maxLon = -66.95;
+                
+                const latitude = Math.random() * (maxLat - minLat) + minLat;
+                const longitude = Math.random() * (maxLon - minLon) + minLon;
+                
+                // Format the coordinates to a fixed number of decimal places for the API.
+                return {
+                    latitude: latitude.toFixed(4),
+                    longitude: longitude.toFixed(4)
+                };
+            }
+
+            /**
+             * Delays execution for a specified number of milliseconds.
+             * @param {number} ms - The number of milliseconds to wait.
+             * @returns {Promise<void>}
+             */
+            const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+            /**
+             * Fetches the 10-day weather forecast from the National Weather Service API with retry logic.
+             */
+            async function fetchWeather() {
+                let attempt = 0;
+                while (true) { // Retry indefinitely
+                    const coords = getRandomUsCoordinates();
+                    const pointsUrl = `https://api.weather.gov/points/${coords.latitude},${coords.longitude}`;
+                    
+                    try {
+                        loadingIndicator.classList.remove('hidden');
+                        errorMessage.classList.add('hidden');
+                        
+                        // Step 1: Get the forecast URL from the points endpoint
+                        const pointsResponse = await fetch(pointsUrl, {
+                            headers: {
+                                'User-Agent': 'WeatherApp, (https://github.com/your-username/your-app)'
+                            }
+                        });
+
+                        if (!pointsResponse.ok) {
+                            throw new Error(`HTTP error! status: ${pointsResponse.status}`);
+                        }
+                        
+                        const pointsData = await pointsResponse.json();
+                        const forecastUrl = pointsData.properties.forecast;
+                        
+                        // Update the location display with city and state
+                        const city = pointsData.properties.relativeLocation.properties.city;
+                        const state = pointsData.properties.relativeLocation.properties.state;
+                        // Note: The NWS API does not provide a zip code. A separate geocoding API would be needed for that.
+                        locationDisplay.textContent = `Forecast for ${city}, ${state}`;
+
+                        // Step 2: Use the forecast URL to get the actual forecast
+                        const forecastResponse = await fetch(forecastUrl, {
+                            headers: {
+                                'User-Agent': 'WeatherApp, (https://github.com/your-username/your-app)'
+                            }
+                        });
+
+                        if (!forecastResponse.ok) {
+                            throw new Error(`HTTP error! status: ${forecastResponse.status}`);
+                        }
+                        
+                        const forecastData = await forecastResponse.json();
+                        
+                        // Hide loading indicator and show the container
+                        loadingIndicator.classList.add('hidden');
+                        weatherContainer.innerHTML = ''; // Clear any previous content
+                        
+                        renderForecast(forecastData.properties.periods);
+                        return; // Exit the loop on success
+
+                    } catch (error) {
+                        console.error(`Attempt ${++attempt} failed. Retrying...`, error);
+                        errorMessage.classList.remove('hidden');
+                        await delay(3000); // Wait for 3 seconds before retrying
+                    }
+                }
+            }
+
+            /**
+             * Renders the weather forecast data onto the page.
+             * @param {Array} periods An array of forecast periods.
+             */
+            function renderForecast(periods) {
+                // The NWS API returns a period for both day and night.
+                // We'll iterate through them in pairs to get high and low for each day.
+                for (let i = 0; i < periods.length; i += 2) {
+                    const dayPeriod = periods[i];
+                    const nightPeriod = periods[i+1];
+                    
+                    const card = document.createElement('div');
+                    card.className = 'weather-card';
+                    card.innerHTML = `
+                        <h3 class="card-title">${dayPeriod.name}</h3>
+                        <div class="temp-pair">
+                            <span class="temp-high">High: ${dayPeriod.temperature}°</span>
+                            <span class="temp-low">Low: ${nightPeriod.temperature}°</span>
+                        </div>
+                        <p class="forecast-info">
+                            <strong>Wind:</strong> ${dayPeriod.windSpeed} ${dayPeriod.windDirection}
+                        </p>
+                        <p class="forecast-info">
+                            <strong>Forecast:</strong> ${dayPeriod.detailedForecast}
+                        </p>
+                    `;
+                    weatherContainer.appendChild(card);
+                }
+            }
+
+            // Initial call to fetch the weather data when the page loads
+            fetchWeather();
+        });
+    </script>
+
+</body>
+</html>
