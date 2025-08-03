@@ -16,7 +16,7 @@
             padding: 1rem;
         }
         .container {
-            max-width: 900px;
+            max-width: 1200px; /* Increased max-width */
             margin: auto;
             background-color: #ffffff;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -65,40 +65,64 @@
         .weather-card {
             background-color: #f9fafb;
             border-radius: 0.75rem;
-            padding: 1.5rem;
+            padding: 0;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             border: 1px solid #e5e7eb;
             transition: box-shadow 0.3s ease-in-out;
+            display: flex;
+            align-items: stretch;
         }
         .weather-card:hover {
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
+        .card-icon-container {
+            flex-shrink: 0;
+            width: 35%; /* Adjusting width for better layout */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e5e7eb;
+            border-radius: 0.75rem 0 0 0.75rem;
+            overflow: hidden;
+            position: relative;
+            padding: 1rem; /* Added padding for space around the icon */
+            border-right: 1px solid #e5e7eb; /* Visual separator */
+        }
+        .weather-icon {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .card-content {
+            flex-grow: 1;
+            color: #1f2937;
+            padding: 1rem;
+        }
         .card-title {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #1f2937;
             margin-bottom: 0.5rem;
         }
-        .temp-display {
+        .temp-pair {
             display: flex;
-            align-items: center;
-            column-gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        .temp-value {
-            font-size: 2.25rem;
+            justify-content: space-between;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #111827;
+            margin-bottom: 0.5rem;
         }
-        .temp-unit {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #6b7280;
+        .temp-high {
+            color: #d9534f;
+        }
+        .temp-low {
+            color: #428bca;
         }
         .forecast-info {
             font-size: 0.875rem;
             color: #4b5563;
             margin-bottom: 0.25rem;
+        }
+        .forecast-info strong {
+            font-weight: 700;
         }
         .error-message {
             background-color: #fee2e2;
@@ -109,20 +133,6 @@
             font-weight: 500;
             margin-top: 2rem;
             box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-        }
-        .temp-pair {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 1rem;
-        }
-        .temp-high {
-            color: #d9534f;
-        }
-        .temp-low {
-            color: #428bca;
         }
     </style>
 </head>
@@ -262,18 +272,41 @@
                     
                     const card = document.createElement('div');
                     card.className = 'weather-card';
+                    
+                    // Get data with fallbacks
+                    const iconUrl = dayPeriod.icon;
+                    const popDay = dayPeriod.probabilityOfPrecipitation?.value || 'N/A';
+                    const humidityDay = dayPeriod.relativeHumidity?.value || 'N/A';
+                    // Check if nightPeriod and its properties exist before trying to access them
+                    const humidityNight = (nightPeriod && nightPeriod.relativeHumidity?.value) || 'N/A';
+
+                    // Inner HTML content with icon on the left and text on the right
                     card.innerHTML = `
-                        <h3 class="card-title">${dayPeriod.name}</h3>
-                        <div class="temp-pair">
-                            <span class="temp-high">High: ${dayPeriod.temperature}°</span>
-                            <span class="temp-low">Low: ${nightPeriod.temperature}°</span>
+                        <div class="card-icon-container">
+                             <img src="${iconUrl}" alt="${dayPeriod.shortForecast}" class="weather-icon">
                         </div>
-                        <p class="forecast-info">
-                            <strong>Wind:</strong> ${dayPeriod.windSpeed} ${dayPeriod.windDirection}
-                        </p>
-                        <p class="forecast-info">
-                            <strong>Forecast:</strong> ${dayPeriod.detailedForecast}
-                        </p>
+                        <div class="card-content">
+                            <h3 class="card-title">${dayPeriod.name}</h3>
+                            <div class="temp-pair">
+                                <span class="temp-high">High: ${dayPeriod.temperature}°</span>
+                                <span class="temp-low">Low: ${nightPeriod?.temperature}°</span>
+                            </div>
+                            <p class="forecast-info">
+                                <strong>Wind:</strong> ${dayPeriod.windSpeed} ${dayPeriod.windDirection}
+                            </p>
+                            <p class="forecast-info">
+                                <strong>Chance of Precipitation:</strong> ${popDay}%
+                            </p>
+                            <p class="forecast-info">
+                                <strong>Day Humidity:</strong> ${humidityDay}%
+                            </p>
+                            <p class="forecast-info">
+                                <strong>Night Humidity:</strong> ${humidityNight}%
+                            </p>
+                            <p class="forecast-info">
+                                <strong>Forecast:</strong> ${dayPeriod.detailedForecast}
+                            </p>
+                        </div>
                     `;
                     weatherContainer.appendChild(card);
                 }
