@@ -16,11 +16,11 @@
             padding: 1rem;
         }
         .container {
-            max-width: 1200px; /* Increased max-width */
+            max-width: 90%; /* Increased max-width */
             margin: auto;
             background-color: #ffffff;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border-radius: 1rem;
+            border-radius: 0px;
             padding: 2rem;
         }
         @media (min-width: 768px) {
@@ -64,7 +64,7 @@
         }
         .weather-card {
             background-color: #f9fafb;
-            border-radius: 0;
+            border-radius: 0px;
             padding: 0;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             border: 1px solid #e5e7eb;
@@ -82,7 +82,7 @@
             align-items: center;
             justify-content: center;
             background-color: #e5e7eb;
-            border-radius: 0;
+            border-radius: 0px;
             overflow: hidden;
             position: relative;
             padding: 1rem; /* Added padding for space around the icon */
@@ -99,9 +99,10 @@
             padding: 1rem;
         }
         .card-title {
-            font-size: 1.25rem;
+            font-size: 2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+            margin-top:0px;
         }
         .temp-pair {
             display: flex;
@@ -128,7 +129,7 @@
             background-color: #fee2e2;
             color: #991b1b;
             padding: 1rem;
-            border-radius: 0;
+            border-radius: 0px;
             text-align: center;
             font-weight: 500;
             margin-top: 2rem;
@@ -308,10 +309,13 @@
                                 <span class="temp-low">Low: ${nightPeriod?.temperature}°</span>
                             </div>
                             <p class="forecast-info">
-                                <strong>Wind:</strong> ${dayPeriod.windSpeed} ${dayPeriod.windDirection}
+                                <strong>Forecast:</strong> ${dayPeriod.detailedForecast}
                             </p>
                             <p class="forecast-info">
                                 <strong>Chance of Precipitation:</strong> ${popDay}%
+                            </p>
+                            <p class="forecast-info">
+                                <strong>Wind:</strong> ${dayPeriod.windSpeed} ${dayPeriod.windDirection}
                             </p>
                             <p class="forecast-info">
                                 <strong>Day Humidity:</strong> ${humidityDay}%
@@ -319,9 +323,7 @@
                             <p class="forecast-info">
                                 <strong>Night Humidity:</strong> ${humidityNight}%
                             </p>
-                            <p class="forecast-info">
-                                <strong>Forecast:</strong> ${dayPeriod.detailedForecast}
-                            </p>
+                            
                         </div>
                     `;
                     weatherContainer.appendChild(card);
